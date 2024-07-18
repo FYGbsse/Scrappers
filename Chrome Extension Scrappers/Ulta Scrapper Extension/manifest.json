@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "ulta - Scrapper",
+    "description": "ulta - Review Scrapper - 28092021",
+    "version": "1.0",
+    "permissions": ["tabs", "activeTab", "storage", "<all_urls>"],
+
+    "file_system_provider_capabilities": {
+        "source": "file"
+    },
+
+    "browser_action": {
+        "default_icon": {
+            "19": "images/icons/19.png",
+            "38": "images/icons/38.png"
+        },
+        "default_popup": "popup.html"
+    },
+
+    "icons": {
+        "16": "images/icons/16.png",
+        "19": "images/icons/19.png",
+        "38": "images/icons/38.png",
+        "64": "images/icons/64.png",
+        "128": "images/icons/128.png"
+    }
+}

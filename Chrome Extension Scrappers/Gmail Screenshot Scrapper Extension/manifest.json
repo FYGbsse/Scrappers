@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Mail Promotion ScreenShot",
+    "description": "This extension is used to take promotion mails on gmail only.Developed by Eweberinc-2022",
+    "version": "1.0",
+    "author":"Sajeel Shafqqat",
+    "permissions": ["tabs", "activeTab", "storage","cookies","scripting"],
+    "host_permissions": ["<all_urls>","https://*/","http://*/"],
+
+    "file_system_provider_capabilities": {
+        "source": "file"
+    },
+
+    "action": {
+        "default_icon": {
+            "16": "images/icons/16.png",
+            "19": "images/icons/19.png",
+            "38": "images/icons/38.png",
+            "64": "images/icons/64.png",
+            "128": "images/icons/128.png"
+        },
+        "default_popup":"popup.html"
+    },
+
+    "icons": {
+        "16": "images/icons/16.png",
+        "19": "images/icons/19.png",
+        "38": "images/icons/38.png",
+        "64": "images/icons/64.png",
+        "128": "images/icons/128.png"
+    }
+}
