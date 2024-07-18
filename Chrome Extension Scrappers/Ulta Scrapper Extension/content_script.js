@@ -63,7 +63,7 @@ function clickPlanet() {
                                     var data = { source: 'https://www.ulta.com/', csv: csv };
                                     var json_data = JSON.stringify(data);    
                                     /* Sending to datafinder */
-                                    jQuery.post('https://fgy.wqh.mybluehost.me/datafinder/ajax.php?action=ulta_reviews', { data: json_data },function(response){
+                                    jQuery.post('https://[domain]/[path]/[Query for example ajax.php?action=ulta_reviews]', { data: json_data },function(response){
                                     console.log(response);
                                     },"json");
                                 });

@@ -58,7 +58,7 @@ function ReviewScrapper(){
                 var data = { source: 'https://www.fragranticarabia.com/', csv: csv , user_id: user_id};
                 var json_data = JSON.stringify(data);  
                 // console.log(json_data);
-                jQuery.post('https://fgy.wqh.mybluehost.me/datafinder/ajax.php?action=fragranticarabia_reviews', { data: json_data },function(response){
+                jQuery.post('https://[domain]/[path]/[Query for example ajax.php?action=fragranticarabia_reviews]', { data: json_data },function(response){
                 console.log(response);
                 },"json");
             });
