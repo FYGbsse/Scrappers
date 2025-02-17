@@ -1,0 +1,12 @@
+Instructions:
+-------------
+
+
+1. Download this chrome extention "Cigna Scrapper Extension".
+2. Upload as extension in google chrome extension folder
+3. Navigate to Cigna directory page and run scraper
+
+
+Note: Keep to create endpoint for this. That is connected with database
+
+Contact : +92306-5678817 for help

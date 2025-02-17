@@ -158,7 +158,7 @@ async  function ReviewScrapper(){
     var data = { source: 'providers.online.metlife.com/', csv: csv , user_id: id};
     var json_data = JSON.stringify(data);  
      console.log(json_data);
-    jQuery.post('https://slategray-skunk-713260.hostingersite.com/Hen_data/hen_metlife/metlife_endpoint.php?action=hen_metlife_data_idgwjks', { data: json_data },function(response){
+    jQuery.post('server-ip-or-address/path-to-folder/file-name.php?action=action-name', { data: json_data },function(response){
     console.log(response);
      });
 
