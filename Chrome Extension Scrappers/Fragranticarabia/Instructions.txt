@@ -1,5 +1,61 @@
-Website:
+Website: //www.fragranticarabia.com/
+
 Author : Sajeel
+
 Email: sajeelshafqat
 
 How is works
+-------------
+
+-> When the user visits https://www.fragranticarabia.com/, it alerts that they are on the correct site.
+
+	Depending on the page URL (male perfumes, female perfumes, or unisex), it calls the ReviewScrapper() function.
+
+-> Inside ReviewScrapper():
+
+	It retrieves a manual_scrap_user_id from Chrome's local storage.
+
+	It loops through all perfume cards found on the page (.perfumes-row .cell.card).
+
+	For each card:
+
+		It extracts the product's detail page URL (search_url).
+
+		It makes an AJAX GET request to fetch the full product page HTML.
+
+		From the fetched product page:
+
+			It scrapes:
+
+				Product Title
+		
+				Review Rating
+
+				Reviews (Date, Author, Body, Author Image)
+
+		It packs the scraped review information into a JSON object.
+
+		It sends the data to your server at an endpoint like:
+
+		https://[domain]/[path]/[Query for example ajax.php?action=fragranticarabia_reviews]
+
+		It logs responses for debugging.
+
+-> After scraping all products on the page:
+
+	It clicks the "Load More" button automatically.
+
+	After a delay (9 seconds), it recursively calls ReviewScrapper() again to scrape the newly loaded products.
+
+
+
+Key Technical Notes:
+----------------------
+setTimeout is used to delay scraping per product (count starts at 9000ms and increases by 1000ms each time).
+
+The script removes the already-scraped .cell.card elements to avoid duplicate scraping.
+
+Recursive scraping: It scrapes, loads more, scrapes again until no more products are available.
+
+Post data: jQuery.post sends the data to the server in JSON format.
+

@@ -1,0 +1,48 @@
+Description
+-----------
+
+This extension helps to automatically collect customer reviews from a perfume website and store them in a database without any manual work.
+It works quietly in the background and keeps collecting information until it has gathered everything. The total scrape values are 25800.
+
+How it works
+-----------
+
+
+1. Recognizing the Website
+	When you open the Fragrantic Arabia website, the extension checks if you are on the right page.
+	It shows a small alert message like "I am in Fragrantic Arabia" to confirm.
+
+2. Choosing the Category
+	The extension looks at the page you are on — whether it's showing perfumes for men, women, or both (unisex).
+	Based on that, it decides to start collecting reviews.
+
+3. Collecting Reviews
+	The extension goes through the perfumes listed on the page, one by one.
+	For each perfume, it:
+
+		Opens the perfume's individual page behind the scenes.
+
+		Gathers important details like:
+
+		Perfume name
+
+		Customer review rating
+
+		Reviewer’s name
+
+		Review text
+
+		Reviewer’s profile picture
+
+	Collects this information and prepares it to send.
+
+4. Saving the Data
+	After collecting the details, the extension sends the information securely to a database where it can be stored and used later.
+
+5. Loading More Perfumes
+	Once it collects reviews from all the perfumes on the page, the extension automatically clicks a "Load More" button to see even more perfumes.
+	It then repeats the same process to gather even more reviews.
+
+6. Repeats Until Done
+The extension keeps doing this — collecting reviews, sending data, and loading more perfumes — until there are no more perfumes left to scrape.
+
