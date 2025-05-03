@@ -1,0 +1,870 @@
+/*
+* Created By : Sajeel Shafqat
+* Company : Teknologics
+* Created Date : 12-Oct-2023
+*
+* All new style updates after created date will be done in this file.
+* 
+*/
+
+
+/*--------------------------Below DESKTOP----------------------------*/
+
+
+
+/* kalavio Popup style fix*/
+form[data-testid="klaviyo-form-YtfECt"] > div:nth-child(2) > div:nth-child(2) > div{ padding : 10px 0px !important;    }
+form[data-testid="klaviyo-form-YtfECt"] > div:nth-child(2) > div:nth-child(2)  div.p-rich_text_section,
+form[data-testid="klaviyo-form-YxGCkd"] > div:nth-child(2) > div:nth-child(2)  div.p-rich_text_section{ line-height: 1 !important;}
+form[data-testid="klaviyo-form-YtfECt"] > div:nth-child(2) > div:nth-child(2)  div.p-rich_text_section > span{font-size:13px !important;}
+/*career page*/
+#careers .careers-Banner .Inner-Content .content p{font-size:26px !important;}
+/* Faq page */
+#faqs .Policies-Heading h1{ margin-left: 0px !important;}
+/*enablng banner click on homepage */
+.Page-Banner .images-contain .adaptive_height img { pointer-events: unset !important;}
+/*text scroller*/
+.TickerNews .container { max-width: fit-content !important;}
+/*Add product excerpt on sjs*/
+body#home-skin .tekcard-summary,
+body#shop-all-skin .tekcard-summary{
+    display: block !important;
+    height: 30px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto 16px;
+    padding: 0 10px;
+    line-height: 25px;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+body#shop-all-skin .Skin-all-Products.Shop-Products .card-title .text,
+body#home-skin .Shop-Products .card-title .text{  min-height: 0px !important;}
+
+/* Anounment bar for sweet july and sweet skin*/
+body:not(.sweet-july-skin) .SJS-Bar,
+body.sweet-july-skin .SJ-Bar {display: none;}
+body.sweet-july-skin .SJS-Bar,
+body:not(.sweet-july-skin) .SJ-Bar {display: block;}
+
+/*SJS Setting banner for mobile * /
+body#home-skin .sjs-video-banner h2{ font-style: normal;}
+body#home-skin .sjs-video-banner li.slick-active > button[aria-selected="true"],
+.slick-dots li.slick-active button{
+  background: #F4F0E8 !important;
+  border-color: #F4F0E8 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+body#home-skin .sjs-video-banner li:not(.slick-active) > button{
+    background: #F4F0E8 !important;
+    border-color: #F4F0E8 !important;
+  opacity:0.4;
+  width: 10px !important;
+  height: 10px !important;
+}
+body#home-skin .sjs-video-banner div .slide-content a{
+  / *padding: 13px 0px !important;* /
+   padding: 8px 0px ;
+  font-size: 14px;
+  / *font-size: 16px;* /
+  font-weight:400;
+  text-transform: capitalize; 
+  min-width: 100px;
+}*/
+body#home-skin .sjs-video-banner div .power_actives.slide-content a:active,
+body#home-skin .sjs-video-banner div .power_actives.slide-content a:hover{
+  background-color:#fff;
+  border-color:#fff;
+  color:#000;
+}
+body#home-skin   .sjs-video-banner .slideshow .slick-dots li{margin:-5px;}
+
+/* sj- home slider for november*/
+body .sj-home-slider li.slick-active > button[aria-selected="true"],
+.slick-dots li.slick-active button{
+  background: #F4F0E8 !important;
+  border-color: #F4F0E8 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+body .sj-home-slider li:not(.slick-active) > button{
+  background: #F4F0E8 !important;
+  border-color: #F4F0E8 !important;
+  opacity:0.4;
+  width: 10px !important;
+  height: 10px !important;
+}
+body .sj-home-slider .slideshow .slick-dots li{margin:-5px;}
+
+.sj-home-slider h2.slide-heading {
+  font-family: "Saol Text" !important;
+  font-style: italic !important;
+}
+.sj-home-slider h3.slide-sub span,
+.sj-home-slider p.slide-text{
+  font-family: "GT America" !important;
+}
+.sj-home-slider a.slide-button{
+    font-family: "GT America" !important;
+    opacity: 1;
+    text-transform: capitalize;
+}
+
+/* home page two images side by side*/    
+body#sweet-july div[id*="custom-image-banner-template"] > div > div.halo-block-header.text-center > h3 > span{
+  font-family: "Saol Display" !important;
+  text-transform: capitalize;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0px !important;
+  line-height: 38px;
+}
+body#sweet-july div.custom-image-banner-block div.customImageBanner-inner{ border-left: unset;} 
+body#sweet-july div.custom-image-banner-block div.customImageBanner-inner h3.title span{
+    font-family: "Saol Display" !important;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height:42px;
+}
+body#sweet-july div.customImageBanner-item div.content a.spotlight-button{   font-weight: 500; }
+div.text-tek {  top:17% !important;  }
+
+/*Mobile Grib View*/
+.tek-skin-mob-grid { display:none; }
+/* nav for skin*/
+.tek-mob-custom-heading{display:none;}
+
+/*after css fixing*/ 
+/* sales badge*/
+ span.badge.sale-badge{ font-size: 14px !important; padding: 5px 10px !important; margin:10px !important; text-transform: uppercase; }
+
+/*we may also know text right position*/
+.halo-block.halo-product-block.halo-recommendations-block .product .card-title{ text-align:left;}
+   .category-intro-text h2 {
+    font-family: "Riviera Nights Medium" !important;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0em;
+  }
+  .category-intro-text p {
+    font-family: "Riviera Nights" !important;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0em;
+  }
+  ._category-intro-text div {   margin-top: 0px !important;}
+
+/*category page css*/
+ 
+ div.tek_wrapper .image-zoom:hover img, div.tek_wrapper:hover .image-zoom img {
+    transform: unset;
+ }
+ div.tek_wrapper .image-zoom img {
+    will-change: unset;
+    transition: unset;
+}
+ div.tek_wrapper h3 a span{
+  font-family: "Riviera Nights Medium";
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: left;
+ }  
+  div.tek_wrapper .des{
+  font-family: "Saol Display";
+  font-weight: 500;
+  letter-spacing: 0em;
+  text-align: left;
+} 
+a[class*="image-zoom adaptive_height"],a[class*="image-zoom"]{margin-bottom:15px; }  
+
+/*lander page input email*/
+#sweet-july-magazine-the-village-issue .needsclick input#email_103113111 {   border:1px solid #000 !important;}
+#sweet-july-magazine-the-village-issue .needsclick input#email_103113111::placeholder{ 
+  color: #000000 !important;
+  opacity: 1;
+}
+#sweet-july-magazine-the-village-issue .needsclick input#email_103113111::-ms-input-placeholder{   color: #000000 !important;}
+/*banner*/
+.content-food h3.slide-mobile {line-height: normal; }
+/*banner*/
+.content-food h3.slide-mobile {line-height: normal; }
+.ware-house h3 span { font-family: "GT America";}
+.ware-house h3{ margin-top: 10px !important;}
+.ware-house h2{ font-family: "Saol Display";}
+
+.sj-secondary-banner .banner-heading{
+  font-family: "GT America Expanded" !important;
+  font-weight: 500;
+}
+.sj-secondary-banner .banner-text{
+  font-family: "GT America";
+  font-weight: 400;
+}
+.sj-secondary-banner .content-box--absolute a{
+  font-family: "GT America";
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+}
+
+/*--------------------------CSS min-width: 768px ----------------------------*/
+
+@media only screen and (min-width: 768px) {
+ .sweet-july-skin.template-product #ProductSection-template--23292157788481__main .productView-details button.product-form__submit{
+   margin: -79px 79px 31px !important;
+ }
+
+  /* SJS - Fixing sold out button on product page*/
+  .product-form__buttons button[id="product-add-to-cart"]:disabled{
+      position: unset !important;
+      margin: 0px 0px 6px 0px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+  }
+  /* drop menu*/
+  body.sweet-july-skin ul.header__submenu.list-menu {
+     background-color: transparent !important;
+     padding: 9px 0px 9px 0px !important;
+     box-shadow:unset !important; 
+  }
+  body.sweet-july-skin li.menu-lv-2:not(.navigation_all_mobile) a.menu-lv-2__action.header__menu-item {
+     padding: 10px 20px 10px!important;
+     background: #f4f0e8 !important;
+  }
+   body.sweet-july-skin li.menu-lv-2:not(.navigation_all_mobile) a.menu-lv-2__action.header__menu-item:hover{ color:#8b685b;}  
+  /* hiding sold out - fix sold out button position*/
+  .template-product.product .productView-details .product-form__submit.button[disabled] { margin-top: -10px!important;}
+  /*temparory css fix- product page*/
+ /* .sweet-july-skin.template-product .productView-details button.product-form__submit { margin: -79px 79px 47px !important;} */
+  .sweet-july-skin.template-product .productView-details button.product-form__submit { margin: -79px 79px 31px !important;}
+/*category page css*/  
+   div.tek_wrapper  div.content{
+    padding-left:0px;
+    border-left: unset;
+  }
+  .customImageBanner--smallImg div.tek_wrapper img{
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1 / 0.5;
+  }
+ div.tek_wrapper .des {
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      touch-action: none;
+     -ms-touch-action: none;
+  }  
+  div.tek_wrapper h3{  margin: 0px;}
+  div.tek_wrapper .customImageBanner-inner {
+    height:140px;
+    max-height:140px;
+  }  
+  .customImageBanner--largeImg div.tek_wrapper,
+  .customImageBanner--largeImg .tek_wrapper .img-box{  height:100%; }
+  .customImageBanner--largeImg div.tek_wrapper a{     height: calc(100% - 156px);}
+  .customImageBanner--largeImg div.tek_wrapper img{    object-fit: cover !important;}  
+  .tek_wrapper { padding-bottom:{{ section.settings.item_vertical_distance | append: 'px'}};}  
+  a[class*="image-zoom adaptive_height"]{  padding-top:unset;}
+  .cate_mb{   display: none;  } 
+  div.tek_wrapper .content.customImageBanner-inner{  padding:10px 0 30px 0; } 
+  
+}
+/*--------------------------CSS max-width: 767px ----------------------------*/
+
+@media only screen and (max-width: 767px) {
+.labor_day{padding-bottom: 275px !important;}
+  .power_actives .slide-content__person.slide-testimonial{margin-bottom:8px;}
+   .sweet-july-skin.template-product .productView-details .product-form__submit {
+    position: relative !important;}
+  /*career page*/
+  #careers .careers-Banner .Inner-Content .content p{ font-size:20px !important;}
+  /*SJS Setting banner for mobile*/  
+   body#home-skin .sjs-video-banner video{
+    height: inherit;
+    object-fit: cover;
+  }
+  body#home-skin .sjs-video-banner .fluid-width-video-wrapper{
+    height:590px;
+  }
+  body#home-skin .sjs-video-banner .slick-list.draggable{
+    height: 590px !important;
+  }
+  body#home-skin .sjs-video-banner .adaptive_height.slide-mobile{
+    height: 590px !important;
+  }
+  body#home-skin .sjs-video-banner .adaptive_height.slide-mobile img{
+    object-fit: cover;
+  }
+  body#home-skin   .sjs-video-banner .slide-video + .slide-content > .slide-pc{
+    display:block !important;
+    line-height: 1.4  !important;
+  }
+  body#home-skin .sjs-video-banner div + .slide-content > h3 > span{
+    font-size_: 12px;
+    letter-spacing_: 0.6px;
+    line-height_: 16.8px
+  }
+  body#home-skin .sjs-video-banner div + .__slide-content > h2{
+    font-size:28px !important;
+    letter-spacing: 1.4px !important;
+    line-height: 39.2px !important;
+    margin-bottom: 15px;
+  }
+  body#home-skin   .sjs-video-banner div:not(.slide-video) +  .power_actives.slide-content > h2,
+  body#home-skin   .sjs-video-banner div:not(.slide-video) +  .power_actives.slide-content > h3{
+    color:#fff !important;
+    border-color: #fff  !important;
+  }
+  body#home-skin   .sjs-video-banner div:not(.slide-video) + .power_actives.slide-content > a{
+    color:#fff  !important;
+    border-color: #fff  !important;
+  }
+  body#home-skin   .sjs-video-banner div:not(.slide-video) + .power_actives.slide-content > a:hover{ color:#000  !important;}
+   body#home-skin .sjs-video-banner .slide-content{  text-align:center; }
+
+  body#home-skin .sjs-video-banner li:not(.slick-active) > button{
+    width: 8px !important;
+    height: 8px !important;
+  }
+  body#home-skin .sjs-video-banner li.slick-active > button[aria-selected="true"],
+  .slick-dots li.slick-active button{
+    width: 8px !important;
+    height: 8px !important;
+  }
+  /* drop menu*/
+  body.sweet-july-skin #navigation-mobile  ul.header__submenu.list-menu{  background: #f6f4ee;}
+  /*temparory css fix- product page*/
+  .sweet-july-skin.template-product .productView-details button.product-form__submit {  margin: 0px 0px 20px 0px !important; }
+  /* sj- home slider for november*/
+    .sj-home-slider div.slide-content {
+       text-align: center !important;
+       width: 370px !important;
+    }
+    .sj-home-slider h2.slide-heading.slide-mobile {
+      font-size: 36px !important;
+      font-weight: 600 !important;
+      line-height: 38px !important;
+      font-style: italic !important;
+      letter-spacing: 0em;
+    }
+    .sj-home-slider h3.slide-sub span{
+        font-size: 18px !important;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0em;
+    }
+   .sj-home-slider p.slide-text{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+  }
+  .sj-home-slider a.slide-button{
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 29px;
+      letter-spacing: 0em;
+      height: 45px;
+  }
+    body .sj-home-slider li:not(.slick-active) > button{
+    width: 8px !important;
+    height: 8px !important;
+  }
+  body .sj-home-slider li.slick-active > button[aria-selected="true"],
+  .slick-dots li.slick-active button{
+    width: 8px !important;
+    height: 8px !important;
+  }
+  /* home page two images side by side*/  
+    body#sweet-july div.custom-image-banner-block div.customImageBanner-inner h3.title span{ line-height:36px;}
+    body#sweet-july div.custom-image-banner-block .halo-item{
+    padding-right:15px !important;
+    padding-left:15px !important;}
+    div.text-tek {  top:23% !important;}
+  /*Mobile Grib View*/
+  .tek-skin-desk-grid{ display:none; }
+  div.tek-skin-mob-grid {display:block;  }
+    #shop-all-skin div.tek-skin-mob-grid div.products-grid .product {   width: 50% !important;}
+    #shop-all-skin div.tek-skin-mob-grid .product  div.card-information > div.card-information__wrapper > a > span{
+    height: 30px;  
+    font-family: "GT America" !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 15px !important;
+   }
+    #shop-all-skin div.tek-skin-mob-grid .product  div.card-information > div.card-information__wrapper > div.tekcard-summary {
+    font-family: "GT America";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+   }
+   #shop-all-skin div.tek-skin-mob-grid .product div.card-action{   width:100% !important;  }
+   #shop-all-skin div.tek-skin-mob-grid .product div.card-action button#product-add-to-cart{
+      font-weight: 500 !important;
+      line-height: 28px;
+      letter-spacing: 0em;
+      font-size: 12px;
+      text-indent: -65px !important;
+    }
+    #shop-all-skin div.tek-skin-mob-grid div.card-action  div.price{   min-width: 65px !important; }
+    #shop-all-skin div.tek-skin-mob-grid div.card-action > div > dl > div.price__regular{  display:block;}
+    #shop-all-skin div.tek-skin-mob-grid div.card-action > div > dl > div.price__sale{  display:none;}
+    #shop-all-skin div.tek-skin-mob-grid div.card-information  div.card-action  dl span{
+      font-size: 12px  !important;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0em;
+    }
+    /* MOVING VALENTINE MOBILE TEXT UP*/
+  .__sjs-video-banner.valentine-banner .content-box--absolute {    /* top:25% !important;*/ top:22% !important; }
+  body#home-skin div.sjs-video-banner.valentine-banner div+.__slide-content>h2{   font-size: 36px !important;   font-weight: 500 !important; }
+    /* nav for skin*/
+   div.Collection-top-Content h2{
+     font-size: 14px !important;
+      padding:15px 0px 0px 0px !important;
+   }
+  .tek-mob-custom-heading{ display:block; padding-left:20px;  }
+  .tek-mob-custom-heading .rich-text__blocks{    text-align:left; }
+  .tek-mob-custom-heading div.rich-text__blocks h2{
+    font-family: "GT America" !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 25px;
+    text-align: left;
+    font-style: normal !important;
+     text-transform: uppercase !important;
+    margin-bottom:30px;
+  }
+ .tek-mob-custom-heading .rich-text__blocks .rich-text__sub{
+   font-family: "GT America";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.045em;
+  }
+ .tek-mob-custom-heading .rich-text__blocks .rich-text__text{
+   margin-top:10px !important;
+     display: flex;
+    flex-direction: row;
+    text-align: left;
+  }
+  .tek-mob-custom-heading .rich-text__blocks .rich-text__text a {
+    font-family: "GT America";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.045em;
+    color:#696969;
+  }
+  .tek-flex-item {
+    background-color: #fff;
+    padding-right:4%;
+  }
+  /*we may also know text right position*/
+      ._category-intro-text h2 {   font-family: "Riviera Nights Medium" !important; }
+      ._category-intro-text p {
+        font-family: Riviera Nights !important;
+        font-weight: 400;
+      }
+      ._category-intro-text div {   margin-top: 0px !important; }
+   /*category page css*/
+    a[class*="image-zoom adaptive_height"]{  padding-top:100%; }
+  .customImageBanner--largeImg img{   object-fit: cover !important;  }
+   .customImageBanner--smallImg img{
+    object-fit: cover !important;
+    padding-right:15px;
+    padding-left:15px;
+  }
+   div.tek_wrapper  div.content{ border-left: unset; }
+  ._customImageBanner--largeImg div.tek_wrapper .des,
+   ._customImageBanner--largeImg div.tek_wrapper h3 span{
+    color:#ffffff !important;
+  }
+  .cate_desk{  display: none;}
+  .tek-category-section .halo-item.customImageBanner--largeImg{  margin-bottom:35px; }
+  /*Free gift section*/
+    .free-gift-purchase .content-box--absolute{
+    text-align: left !important;
+    top: 70% !important;
+    }
+    .free-gift-purchase  .content-box--absolute a{  margin: inherit !important;}
+    .free-gift-purchase .banner-heading{margin-bottom:5px;}
+    /* Home secondary Promotion banner*/
+  .sj-secondary-banner .banner-button span{ color: #ffffff !important;}
+  .sj-secondary-banner .banner-heading{padding:0px;}
+  .sj-secondary-banner .banner-button {border-color:#ffffff !important;}
+  .sj-secondary-banner .content-box--absolute{ top: 70% !important;}
+
+
+  .lto.slide-content {
+    width: 100% !important;
+    top: 25%;
+  }
+}
+
+/*--------------------------CSS With vary widths ----------------------------*/
+
+/* sj- home slider for november*/
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+     .sj-home-slider h2.slide-headinga {
+      font-size: 48px !important;
+      font-weight: 500 !important;
+      line-height: 52px !important;
+      letter-spacing: 0em  !important;
+      text-align: left;
+    }
+    .sj-home-slider h3.slide-sub spana{
+      font-size: 18px !important;
+      font-weight: 400 !important;
+      line-height: 21px !important;
+      letter-spacing: 0em !important;
+      text-align: left;
+    }
+   .sj-home-slider p.slide-texta{
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    line-height: 25px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+  }
+  .sj-home-slider a.slide-buttona{
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 28px !important;
+    letter-spacing: 0em !important;
+     height: 55px;
+     max-width: 235px;
+     min-width: 179px !important;
+  }
+}
+@media only screen and (min-width: 1025px) {
+     .sj-home-slider h2.slide-heading {
+      font-size: 48px !important;
+      font-weight: 500 !important;
+      line-height: 52px !important;
+      letter-spacing: 0em  !important;
+      text-align: left;
+    }
+    .sj-home-slider h3.slide-sub span{
+      font-size: 18px !important;
+      font-weight: 400 !important;
+      line-height: 21px !important;
+      letter-spacing: 0em !important;
+      text-align: left;
+    }
+   .sj-home-slider p.slide-text{
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    line-height: 25px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+  }
+  .sj-home-slider a.slide-button{
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 28px !important;
+    letter-spacing: 0em !important;
+     height: 55px;
+     max-width: 235px;
+     min-width: 179px !important;
+  }
+}
+/* nav for skin*/
+@media (max-width: 300px) {
+  div.tek-mob-custom-heading div.rich-text__blocks div.rich-text__text {
+    flex-direction: column !important;
+  }
+}
+
+/* equalize the length of button */
+@media (min-width: 1301px){
+  .product-details label:not([name="Color"]).product-form__label.available {
+    min-width: -moz-available;
+    min-width: -webkit-fill-available;
+    min-width: fill-available;
+  }
+}
+/* MOVING VALENTINE MOBILE TEXT UP*/
+@media (min-width: 768px) and (max-width: 1024px){
+    body#home-skin div.sjs-video-banner.valentine-banner .slide-heading {   __line-height: 35px !important;}
+}  
+/*category page css*/
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+    div.tek_wrapper h3 a span{
+    font-size: 12px;
+    line-height: 16px;
+  }  
+    div.tek_wrapper .des{
+    font-size: 16px;
+    line-height: 21px;
+    margin-bottom:0px;
+    }   
+    div.tek_wrapper .content.customImageBanner-inner{   padding-bottom:0px !important; }  
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+  .tek-category-section .container-full {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media only screen and (min-width: 769px){
+ #wordmark-t-shirt-and-shorts-set button#product-add-to-cart,
+  #wordmark-hoodie-and-short-set button#product-add-to-cart,
+ #wordmark-hoodie-and-sweatpant-set button#product-add-to-cart,
+#wordmark-t-shirt-and-sweatpant-set button#product-add-to-cart,
+#classic-sj-crewneck-sweatshirt-and-short-set button#product-add-to-cart,
+#classic-sj-crewneck-sweatshirt-and-sweatpant-set button#product-add-to-cart
+  { margin-top: -230px !important;margin-bottom: auto !important;}
+}
+
+.labor_day p{font-family: 'GT America' !important;}
+
+.product-item[data-product-id="9689230442817"]{display:none;}
+
+.lto.slide-content h3 span{font-family: 'GT America' !important;} .lto.slide-content a{font-weight: 400;}
+
+
+
+/*New black friday banner*/
+.bk_sld.content-box--absolute{top: 70%;}
+.bk_sld .slide-text{ font-family:'GT America' !important;}
+.bk_sld .slide-button.button{ font-family:'GT America Medium' !important; font-weight: 500 !important;}
+@media only screen and (min-width: 1499px){
+.bk_sld.content-box--absolute{left: calc(100vw - 90vw) !important;}
+}
+@media only screen and (max-width: 767px){
+.bk_sld.content-box--absolute{top: 35% !important;}
+ .bk_sld.slide-content .slide-button{font-size: 12px !important;
+    margin: 0px !important;
+min-width: 100px !important;}
+  .bk_sld .slide-text{  line-height: 18px !important; margin : 3px 0px 15px 0px !important;}
+}
+
+
+/*New black friday banner*/
+.n_bk_sld.content-box--absolute{top: 57%;}
+.n_bk_sld p.slide-text{ font-family:'GT America' !important;line-height: 36px;margin: 0px 0px 13px !important;}
+.n_bk_sld .slide-button.button{ font-family:'GT America Medium' !important; font-weight: 500 !important;padding: 15px 0px;font-size: 22px;}
+@media only screen and (min-width: 1499px){
+      
+.n_bk_sld.content-box--absolute{width: 800px !important;}
+.n_bk_sld h2{ font-size: 56px  !important;line-height: 66px  !important;}
+.n_bk_sld p.slide-text{ font-size: 35px !important;line-height: 54px !important;}
+.n_bk_sld .slide-button.button{padding: 24px 0px;font-size: 30px;}
+}
+@media only screen and (max-width: 767px){
+.n_bk_sld.content-box--absolute{top: 50% !important;}
+ .n_bk_sld.slide-content a.slide-button{font-size: 14px !important; margin: 0px !important;line-height: 20px !important;min-width: 110px !important;}
+  .n_bk_sld p.slide-text{  line-height: 20px !important; margin: 3px 0px 15px 0px !important;}
+}
+
+/*New black friday banner 2*/
+.back_friday.content-box--absolute{top: 22%;}
+.back_friday p.slide-text{ font-family:'GT America Medium' !important;line-height: 36px;margin: 0px 0px 25px !important;}
+.back_friday .slide-button.button{ font-family:'GT America Medium' !important; font-weight: 500 !important;padding: 15px 0px;font-size: 22px;width:200px;}
+ .back_friday .slide-sub span{ font-family:'GT America Medium' !important; padding: 15px 0px;font-size: 24px;line-height: 30px;}
+.back_friday .slide-heading h2 { font-size: 41px  !important;line-height: 36px  !important;}
+.end_date{    font-size: 16px;margin-top: 8px;font-family: 'GT America Extended';color: #5F351C;}
+@media only screen and (min-width: 1499px){
+  .end_date{ margin-top: 15px;font-size: 24px;}
+ .back_friday .slide-sub span{ font-size: 34px;line-height: 40px;}     
+.back_friday.content-box--absolute{width: 800px !important;}
+.back_friday h2{ font-size: 55px !important;
+        line-height: 60px !important;margin: 0px 0px 18px !important;}
+.back_friday p.slide-text{ font-size: 35px !important;line-height: 54px !important;}
+.back_friday .slide-button.button{padding: 24px 0px;font-size: 30px;width:260px;}
+}
+@media only screen and (max-width: 600px){
+.back_friday.content-box--absolute{top:22% !important;}
+ .back_friday.slide-content a.slide-button{font-size: 14px !important; margin: 0px !important;line-height: 20px !important;min-width: 110px !important;}
+  .back_friday p.slide-text{  line-height: 20px !important; margin: 3px 0px 15px 0px !important;}
+  .back_friday .slide-sub span{ font-size: 16px;line-height: 26px;}
+  .back_friday .slide-button.button{width:124px;}
+   .end_date{ font-size: 11px;}
+}
+
+
+/*Black Friday Skin*/
+.bf_s.content-box--absolute{top:50%;}
+.bf_s .slide-button.button{ opacity:1 !important;font-family:'GT America Medium' !important; font-weight: 500 !important;padding: 15px 0px;font-size: 22px;width:150px;}
+.bf_s h2.slide-heading { font-family: 'sloop-script-two' !important;}
+.bf_s .slide-sub span{font-family:'GT America Medium' !important;}
+.bf_s .slide-button.button:hover{background:#ffffff !important;color:#C65F5A !important; border-color: #C65F5A!important;}
+@media only screen and (min-width: 1499px){
+.bf_s .slide-sub span{ font-size: 18px;line-height: 40px;}     
+.bf_s.content-box--absolute{width: 800px !important;left: calc((100% - 1170px) / 4) !important;}
+.bf_s h2{ font-size: 120px !important;
+        line-height: 118px !important;margin: 0px 0px 18px !important;}
+.bf_s p.slide-text{ font-size: 20px !important;line-height: 54px !important;}
+.bf_s .slide-button.button{padding: 16px 0px !important;font-size: 22px !important;width:200px;}
+}
+@media only screen and (max-width: 767px){
+.bf_s.content-box--absolute{top:139px !important}
+.back_friday.slide-content a.slide-button{font-size: 14px !important; margin: 0px !important;line-height: 20px !important;min-width: 110px !important;}
+.bf_s .slide-button.button{width:108px;}
+}
+
+
+/*Black Friday Skin End*/
+/*Dec 11*/
+.d_s.content-box--absolute{top:63%;}
+.d_s .slide-button.button{ opacity:1 !important;font-family:'GT America Medium' !important; font-weight: 500 !important;padding: 15px 0px;font-size: 22px;width:150px;}
+.d_s h2.slide-heading { font-family: 'sloop-script-two' !important;}
+.d_s .slide-sub span{font-family:'GT America' !important;}
+.d_s .slide-button.button:hover{background:#ffffff !important;color:#C65F5A !important; border-color: #C65F5A!important;}
+@media only screen and (min-width: 1499px){
+  .d_s h2.slide-heading span{ font-size: 200px !important;}
+.d_s .slide-sub span{ font-size: 4rem;line-height: 40px;}     
+.d_s.content-box--absolute{width: 980px !important;}
+.d_s h2{ font-size: 15rem !important;
+        line-height: 14rem !important;margin: 0px !important;}
+.d_s p.slide-text{ font-size: 3.3rem !important;line-height: 54px !important;}
+.d_s .slide-button.button{padding: 16px 0px !important;font-size: 28px !important;width:230px;}
+}
+@media only screen and (max-width: 767px){
+.d_s.content-box--absolute{top:271px !important}
+.back_friday.slide-content a.slide-button{font-size: 14px !important; margin: 0px !important;line-height: 20px !important;min-width: 110px !important;}
+.d_s .slide-button.button{width:125px;font-size: 18px;margin-top: 270px;}
+  .d_s p.slide-text{margin-top: 0px !important;}
+}
+/*Dec 11 End*/
+/*Dec 11 Skin*/
+.bf_sk.content-box--absolute{top:50%;}
+.bf_sk .slide-button.button{ opacity:1 !important;font-family:'GT America Medium' !important; font-weight: 500 !important;padding: 15px 0px;font-size: 22px;width:150px;}
+.bf_sk h2.slide-heading { font-family: 'sloop-script-two' !important;}
+.bf_sk p.slide-text{font-family:'GT America Medium' !important;}
+.bf_sk .slide-sub span{font-family:'GT America Medium' !important;}
+.bf_sk .slide-button.button:hover{background:#ffffff !important;color:#C65F5A !important; border-color: #C65F5A!important;}
+@media only screen and (min-width: 1499px){
+.bf_sk .slide-sub span{ font-size: 18px;line-height: 40px;}     
+.bf_sk.content-box--absolute{width: 800px !important;left: calc((100% - 1170px) / 4) !important;}
+.bf_sk h2{ font-size: 120px !important;
+        line-height: 118px !important;margin: 0px 0px 0px !important;}
+.bf_sk p.slide-text{ font-size: 20px !important;line-height: 26px !important;}
+.bf_sk .slide-button.button{padding: 16px 0px !important;font-size: 22px !important;width:200px;}
+}
+@media only screen and (max-width: 767px){
+.bf_sk.content-box--absolute{top:139px !important}
+.back_friday.slide-content a.slide-button{font-size: 14px !important; margin: 0px !important;line-height: 20px !important;min-width: 110px !important;}
+.bf_sk .slide-button.button{width:108px;}
+}
+/*Dec 11 Skin End*/
+.sj-secondary-banner .banner-text,.sj-secondary-banner .banner-heading {
+  text-align:left !important;
+}
+
+
+.halo-recommendations-block .card-vendor{display:none;}
+/* mix match Design*/
+div[class^="style_mainSection"]{border: 2px solid #F1F1F1;}
+product-form.productView-form.product-form{order:1;}
+.rbr-addBundleBtn-container,
+[class^="variantSelector_container"]{
+text-transform: uppercase;
+}
+
+[class^="styles_checkContainer"] svg{
+    width: 2.5rem;
+    height: 2rem;
+}
+.rbr-standard-bundle__title{
+  text-align:left;
+}
+.open-match .rbr-standard-bundle__title{
+  text-align:center;
+}
+div[class^="style_header"]{
+margin-right: 0px;
+margin-left: 0px;
+}
+#view-offer-btn:hover{
+  color: #C6956B;
+  background-color: #ffffff;
+  border-color: #C6956B
+}
+@media only screen and (min-width: 768px) {
+   #close-mix{display:none}
+  div[class*="styles_discountOption"]:nth-child(1) div[class^="styles_option_container"]:nth-child(2){visibility:hidden;}
+  #view-offer-btn{ 
+     background: #C6956B; border: 1px solid #C6956B; font-weight: 400; transition: .5s ease;display:none}
+  div[class^="style_mainSection"],div[class^="style_footer"]{display:none}
+  .open-match .section-header-navigation{ display:none;}
+  .open-match #rbr-container-element-false{
+    position: fixed !important;width: 100vw !important;background: #fff;left: 0%;
+    top:0px;z-index: 999;max-height: 100vh;overflow-y: auto;overflow-x: hidden;}
+  .open-match div[class^="style_mainSection"] > div[class^='style_container']{
+    display: grid;grid-template-columns: auto auto auto;gap: 25px;}
+  .open-match #close-mix{
+    display: block; position: fixed;top: 13px;right: 20px;padding: 10px 20px;
+    cursor: pointer;z-index: 1000;width: min-content;min-width: min-content;border:none;}
+
+}
+
+@media only screen and (max-width: 767px){
+  #close-mix,#view-offer-btn{display:none}
+}
+
+
+/*JAN Friday Skin*/
+.jan-banner h2.slide-heading { font-family: 'Saol Text Bold Italic' !important;}
+.jan-banner .slide-sub span{font-family:'GT America' !important;}
+@media only screen and (min-width: 1499px){   
+.jan-banner.content-box--absolute{width: 580px !important;left: calc((100% - 1170px) / 4) !important;}
+}
+@media only screen and (min-width: 768px) and (max-width: 999px){
+.jan-banner h2.slide-heading { margin-bottom: 30px !important;}
+}
+@media only screen and (max-width: 767px){
+.jan-banner.content-box--absolute{top:70% !important}
+}
+
+
+.new_coffee_fix.content-box--absolute{top:68% !important}
+@media only screen and (max-width: 767px){
+.new_coffee_fix.content-box--absolute{top:93% !important}
+}
+
+/*Cup on tables*/
+.tb-cera.content-box--absolute{top: 28%;}
+.tb-cera p.slide-text{ font-family:'GT America Medium' !important;line-height: 36px;margin: 0px 0px 34px !important;}
+.tb-cera .slide-button.button{ font-family:'GT America Medium' !important; font-weight: 500 !important;padding: 15px 0px;font-size: 22px;width:200px;}
+ .tb-cera .slide-sub span{ font-family:'GT America Medium' !important; padding: 15px 0px;font-size: 24px;line-height: 30px;}
+.tb-cera .slide-heading h2 { font-size: 41px  !important;line-height: 36px  !important;}
+.end_date{    font-size: 16px;margin-top: 8px;font-family: 'GT America Extended';color: #5F351C;}
+@media only screen and (min-width: 1499px){
+  .end_date{ margin-top: 15px;font-size: 24px;}
+ .tb-cera .slide-sub span{ font-size: 34px;line-height: 40px;}     
+.tb-cera.content-box--absolute{width: 980px !important;}
+.tb-cera h2{ font-size: 55px !important;
+        line-height: 60px !important;margin: 0px 0px 6px !important;}
+.tb-cera p.slide-text{ font-size: 35px !important;line-height: 54px !important;}
+.tb-cera .slide-button.button{padding: 24px 0px;font-size: 30px;width:260px;}
+}
+@media only screen and (max-width: 600px){
+.tb-cera.content-box--absolute{top:22% !important;}
+ .tb-cera.slide-content a.slide-button{font-size: 14px !important; margin: 0px !important;line-height: 20px !important;min-width: 110px !important;}
+  .tb-cera p.slide-text{  line-height: 18px !important; margin: 0px !important;}
+  .tb-cera .slide-sub span{ font-size: 16px;line-height: 26px;}
+  .tb-cera .slide-button.button{width:124px;}
+   .end_date{ font-size: 11px;}
+}
+
+
+/*Skin - skin products*/
+
+@media only screen and (min-width: 1499px){   
+.skin_products.content-box--absolute{width: 680px !important;}
+.skin_products h2.slide-heading { font-size: 5rem !important; line-height: 5rem !important;}
+.skin_products .slide-text{font-size:3.5rem !important;line-height: 3.5rem !important;}  
+.skin_products .slide-button{font-size:1.8rem !important;min-width: 190px !important;}    
+}
+@media only screen and (min-width: 768px) and (max-width: 999px){
+.jan-banner h2.slide-heading { margin-bottom: 30px !important;}
+}
+@media only screen and (max-width: 767px){
+.skin_products.content-box--absolute{top:82% !important;padding: 25px 5px 30px !important;}
+}

@@ -1,0 +1,162 @@
+{% schema %}
+{
+  "name": "Press Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "press_title",
+      "label": "Page Title",
+      "default": "Latest Press"
+    },
+    {
+      "type": "richtext",
+      "id": "press_description",
+      "label": "Page Description",
+      "default": "<p>Read our latest press features and media articles.</p>"
+    }
+  ],
+  "presets": [{
+    "name": "Press Page"
+  }
+    
+  ]
+}
+{% endschema %}
+
+<div class="press-page-section" style="padding:80px 10px 10px 10px;">
+  <div class="pii_header" style="text-align: left;padding: 0px 20px 0px 20px;">
+  <h1>{{ section.settings.press_title }}</h1>
+  <div class="section-description">{{ section.settings.press_description }}</div>
+  </div>
+  <div class="press-grid">
+    {% paginate blogs['press'].articles by 9 %} 
+    {% for article in blogs['press'].articles %}
+      <div class="press-item">
+          <div class="press-item-inner">
+              <h3 class="pii_title">
+                <a href="{{ article.metafields.custom.press_url }}" rel="noopener" target="_blank" aria-label="{{ article.title }}">
+                {{ article.title }}
+                </a>
+             </h3>
+              <div class="pii__meta-data">
+                  <span class="pii-date">{% if article.metafields.custom.press_date %}{{ article.metafields.custom.press_date| date: "%B %d, %Y" }}{% else %}{{ article.published_at | date: "%B %d, %Y" }}{% endif %}</span>
+              </div>
+              <div class="pii__excerpt">
+                 {{ article.content | split: '<!-- split -->' | last }}
+              </div>
+              <a class="pii__read-more" href="{{ article.metafields.custom.press_url }}" aria-label="READ MORE (opens in a new tab)"  rel="noopener" target="_blank">Read More</a>
+          </div>
+      </div>
+    {% endfor %}
+      </div>           
+  <!-- Pagination Links -->
+  <div class="pagination">
+    {% if paginate.previous %}
+      <a href="{{ paginate.previous.url }}" class="pagination__prev">« Previous</a>
+    {% endif %}
+
+    {% for part in paginate.parts %}
+      {% if part.is_link %}
+        <a href="{{ part.url }}" class="pagination__link">{{ part.title }}</a>
+      {% else %}
+        <span class="pagination__current">{{ part.title }}</span>
+      {% endif %}
+    {% endfor %}
+
+    {% if paginate.next %}
+      <a href="{{ paginate.next.url }}" class="pagination__next">Next »</a>
+    {% endif %}
+  </div>
+
+  {% endpaginate %}
+
+</div>
+<style>
+  .press-grid{
+    display: grid;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: stretch;
+    grid-template-columns: repeat(3, 1fr)
+  }
+  .press-item{
+    display: flex;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    padding: 0px 20px 50px 20px;
+    flex-direction: column;
+    transition-duration: .25s;
+    transition-property: background, border, box-shadow;
+    hidden:overflow;
+  }
+  .pii_title{
+    -webkit-text-stroke-color: #000;
+    stroke: #000;
+    margin-bottom: 4px;
+    
+  }
+  .pii_title a{
+    color: #000000;
+    font-family: "Saol Display Regular", Sans-serif !important;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    line-height: 40px;
+  }
+    .pii__meta-data{
+        font-size: 16px;
+       font-weight: 400;
+       margin-bottom: 16px;
+       line-height: 1.3em;
+       color: #adadad;
+}
+    .pii-date{
+    font-size: 16px;
+    font-weight: 400;
+  }
+    .pii__excerpt{
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    margin: 0;
+    margin-bottom: 18px;
+    }
+        .pii__read-more{
+    
+  }
+  .pagination {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.pagination__link,
+.pagination__prev,
+.pagination__next {
+  display: inline-block;
+  padding: 10px 8px;
+  margin: 0 5px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.pagination__link:hover,
+.pagination__prev:hover,
+.pagination__next:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.pagination__current {
+  padding: 10px 8px;
+  margin: 0 5px;
+  color: #adadad;
+  border-radius: 4px;
+}
+  @media only screen and (max-width: 767px){
+    .press-grid{ grid-template-columns: repeat(1, 1fr)}.press-item{border: none;}
+   
+    
+  }
+</style>

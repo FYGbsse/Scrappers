@@ -1,0 +1,179 @@
+ <section class="reviews tek_rev_block" style="display:none_;">
+            <h2>Customer Reviews</h2>
+                     {%- form 'new_comment', article -%}
+                              {%- liquid
+                                  assign post_message = 'blogs.article.success'
+                                  if blog.moderated? and comment.status == 'unapproved'
+                                      assign post_message = 'blogs.article.success_moderated'
+                                  endif
+                              -%}
+                              <div class="halo-block-header">
+                                  <h3 class="title text-left">
+                                      <span class="text">
+                                        {{ 'blogs.article.comment_form_title' | t }}
+                                      </span>
+                                  </h3>
+                              </div>
+                              {%- if form.errors -%}
+                                  {%- if form.errors -%}
+                                      <div class="form-message" role="alert">
+                                          <div class="alertBox alertBox--error">
+                                              <div class="alertBox-message">
+                                                  <ul>
+                                                      {%- for field in form.errors -%}
+                                                          <li>
+                                                              <a href="#CommentForm-{{ field }}" class="link">
+                                                                  {%- if form.errors.translated_fields[field] contains 'author' -%}
+                                                                      {{ 'blogs.article.name' | t }}
+                                                                  {%- elsif form.errors.translated_fields[field] contains 'body'-%}
+                                                                      {{ 'blogs.article.message' | t }}
+                                                                  {%- else -%}
+                                                                      {{ form.errors.translated_fields[field] }}
+                                                                  {%- endif -%}
+                                                                  {{ form.errors.messages[field] }}
+                                                              </a>
+                                                          </li>
+                                                      {%- endfor -%}
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  {%- endif -%}
+                              {%- elsif form.posted_successfully? -%}
+                                  <div class="form-message" role="status">
+                                      <div class="alertBox alertBox--success">
+                                          <p class="alertBox-message">
+                                              {{ post_message | t }}
+                                          </p>
+                                      </div>
+                                  </div>
+                              {%- endif -%}
+                              <div{% if blog.moderated? == false %} class="article-template__comments-fields"{% endif %}>
+                                  <div class="article-template__comment-fields form-field-group clearfix">
+                                      <div class="form-field{% if form.errors contains "author" %} form-field--error{% endif %}">
+                                          <label class="form-label" for="CommentForm-author">
+                                              {{ 'blogs.article.name' | t }}
+                                          </label>
+                                          <input
+                                              type="text"
+                                              name="comment[author]"
+                                              id="CommentForm-author"
+                                              class="form-input form-input-hiddenPlaceholder{% if form.errors contains "author" %} form-field--error{% endif %}"
+                                              autocomplete="name"
+                                              value="{{ form.author }}"
+                                              aria-required="true"
+                                              {% if form.errors contains 'author' %}
+                                                  aria-invalid="true"
+                                                  aria-describedby="CommentForm-author-error"
+                                              {% endif %}
+                                              placeholder="{{ 'blogs.article.name' | t }}"
+                                          >
+                                      </div>
+                                      <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
+                                          <label class="form-label" for="CommentForm-email">
+                                              {{ 'blogs.article.email' | t }}
+                                          </label>
+                                          <input
+                                              type="email"
+                                              name="comment[email]"
+                                              id="CommentForm-email"
+                                              autocomplete="email"
+                                              class="form-input form-input-hiddenPlaceholder{% if form.errors contains "email" %} form-field--error{% endif %}"
+                                              value="{{ form.email }}"
+                                              autocorrect="off"
+                                              autocapitalize="off"
+                                              aria-required="true"
+                                              {% if form.errors contains 'email' %}
+                                                  aria-invalid="true"
+                                                  aria-describedby="CommentForm-email-error"
+                                              {% endif %}
+                                              placeholder="{{ 'blogs.article.email' | t }}"
+                                          >
+                                      </div>
+                                  </div>
+                                  <div class="form-field{% if form.errors contains "body" %} form-field--error{% endif %}">
+                                      <label class="form-label" for="CommentForm-body">{{ 'blogs.article.message' | t }}</label>
+                                      <textarea
+                                          rows="3"
+                                          name="comment[body]"
+                                          id="CommentForm-body"
+                                          class="form-input form-input-hiddenPlaceholder{% if form.errors contains "email" %} form-field--error{% endif %}"
+                                          aria-required="true"
+                                          {% if form.errors contains 'body' %}
+                                              aria-invalid="true"
+                                              aria-describedby="CommentForm-body-error"
+                                          {% endif %}
+                                          placeholder="{{ 'blogs.article.message' | t }}"
+                                      >
+                                          {{ form.body }}
+                                      </textarea>
+                                  </div>
+                              </div>
+                              <div class="form-actions text-left">
+                                  {%- if blog.moderated? -%}
+                                      <p class="form-note article-template__comment-warning">{{ 'blogs.article.moderated' | t }}</p>
+                                  {%- else -%}
+                                      <p class="form-note article-template__comment-warning">{{ 'blogs.article.moderated-all' | t }}</p>
+                                  {%- endif -%}
+                                  <input type="submit" class="button button--primary" value="{{ 'blogs.article.post' | t }}">
+                              </div>
+                          {%- endform -%}
+                          {%- if section.settings.show_reviews  == true -%}
+                          {% paginate article.comments by 20 %}
+                              {% for comment in article.comments %}
+                                <p>{{ comment.content }}</p>
+                              {% endfor %}
+                            
+                              {{ paginate | default_pagination }}
+                            {% endpaginate %}
+                         {%- endif -%}
+ </section>
+
+<style>
+  @media(min-width:768px) {
+  .tek_rev_block .article-template__comment-fields {display: flex;justify-content: space-between;}
+  .tek_rev_block .article-template__comment-fields > .form-field {width:50%}
+  .tek_rev_block .article-template__comment-fields > .form-field:first-child {padding-right:20px}
+  .tek_rev_block [type="submit"] {width:180px; margin-left:0px;}
+  .reviews.tek_rev_block {max-width: 100%;padding: 60px;}  
+  .reviews.tek_rev_block h2{
+    font-family: 'Saol Display';
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 50px;
+    text-align: left;
+}  
+  }
+   @media(max-width:767px) {
+  .reviews.tek_rev_block { padding: 0px 15px;}  
+   .reviews.tek_rev_block h2{
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 600;
+      line-height: 31.2px;
+      text-align: left;
+}  
+   }
+    
+</style>
+{% schema %}
+  {
+    "name": "Recipe Comments",
+    "settings": [ 
+         {
+            "type": "header",
+            "content": "Recipe Comments"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_reviews",
+            "label": "Show Reviews",
+            "default": false
+        }
+    ],
+    "presets": [
+      { "name": "Recipe Comments"}
+    ]
+  }
+{% endschema %}

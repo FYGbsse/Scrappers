@@ -1,0 +1,144 @@
+<div class="imageSection {% if section.settings.extraclass != blank %}{{ section.settings.extraclass}}{% endif %}">
+    <div class="{% if section.settings.fullcontainer %}container {% endif %}">
+      {% if section.settings.MainHeading != blank %}
+          <h1>{{section.settings.MainHeading }}</h1>
+      {% endif %}
+        <div class="image-with-content  {% if section.settings.layout == "Image-left" %}imageLeft {% elsif section.settings.layout == "Image-right" %}imageRight {% endif %}">
+            <div class="content-Box">
+              {% if section.settings.imageAboveText != blank %}
+                <img src="{{ section.settings.imageAboveText | img_url:"master" }}" data-src="{{ img_url }}" alt="">
+              {% endif %}
+              {% if section.settings.Heading != blank %}
+                <h1>{{section.settings.Heading }}</h1>
+              {% endif %}
+              {% if section.settings.Paragraph != blank %}
+                <p>{{ section.settings.Paragraph }}</p>
+              {% endif %}
+              {% if section.settings.SubHeading != blank %}
+              <h4>{{section.settings.SubHeading }}</h4>
+              {% endif %}
+              {% if section.settings.Sub-Paragraph != blank %}
+                <p>{{ section.settings.Sub-Paragraph }}</p>
+              {% endif %}
+              {% if section.settings.btn_link != blank %}
+                <a href="{{ section.settings.btn_link}}">{{ section.settings.btn_txt }}</a>
+              {% endif %}
+            </div>
+            <div class="Section-image">
+              <img src="{{ section.settings.section-image | img_url:"master" }}" data-src="{{ img_url }}" alt="">
+              {% if section.settings.PhotoBy != blank %}
+              <p>{{section.settings.PhotoBy }}</p>
+              {% endif %}
+              {% if section.settings.overlay-image != blank %}
+              <div class="overlay-Image">
+                  <img src="{{ section.settings.overlay-image | img_url:"master" }}" data-src="{{ img_url }}" alt="">
+              </div>
+              {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Image With Text",
+    "settings": [
+        {
+         "type": "checkbox",
+         "id": "fullcontainer",
+         "label": "Within Container",
+         "default": false
+        },
+        {
+         "type": "select",
+         "id": "layout",
+         "label": "Image Position",
+         "default": "Image-right",
+         "options": [
+          {
+           "value": "Image-left",
+           "label": "Left"
+          },
+          {
+           "value": "Image-right",
+           "label": "Right"
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "id": "MainHeading",
+         "label": "Section Heading"
+        },
+        {
+         "type": "image_picker",
+         "id": "section-image",
+         "label": "Image"
+        },
+        {
+         "type": "image_picker",
+         "id": "overlay-image",
+         "label": "Overlay Image"
+        },
+        {
+         "type": "textarea",
+         "id": "PhotoBy",
+         "label": "Photography By"
+        },
+        {
+         "type": "image_picker",
+         "id": "imageAboveText",
+         "label": "Image Above Text"
+        },
+        {
+         "type": "text",
+         "id": "Heading",
+         "label": "Heading"
+        },
+        {
+         "type": "textarea",
+         "id": "Paragraph",
+         "label": "Paragraph"
+        },
+        {
+         "type": "text",
+         "id": "SubHeading",
+         "label": "Sub Heading"
+        },
+        {
+         "type": "textarea",
+         "id": "Sub-Paragraph",
+         "label": "Sub Paragraph"
+        },
+        {
+         "type": "url",
+         "label": "Button Link",
+         "id": "btn_link"
+        },
+      
+        {
+         "type": "text",
+         "id": "btn_txt",
+         "label": "Button Text",
+         "default": "Click here"
+        },
+        {
+         "type": "text",
+         "id": "extraclass",
+         "label": "add class"
+        }
+    ],
+ "presets": [
+        {
+         "category": "Image-with-Text-Section",
+         "name": "Image With Text"
+        }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

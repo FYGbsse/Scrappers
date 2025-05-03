@@ -1,0 +1,117 @@
+{% if section.settings.ingredients_heading != blank %}
+<section class="infoSection" style="background-color: {{ section.settings.background_color }};">
+  <div class="container">
+    <div class="dflex">
+      <div class="IngredientsBox">
+        <h2>{{ section.settings.ingredients_heading | capitalize }}</h2>
+        {% for list_block in section.blocks %}
+          {% if list_block.type == 'ingredient_list' and list_block.settings.items.size > 0 %}
+            <div class="List">
+              <ul>
+                {% for item in list_block.settings.items %}
+                  <li>{{- item -}}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="InstructionsBox">
+        <h2>{{ section.settings.instructions_heading | capitalize }}</h2>
+        {% for list_block in section.blocks %}
+          {% if list_block.type == 'instruction_step' %}
+            {% if list_block.settings.step_title != blank %}
+              <div class="List">
+                {% if list_block.settings.step_title != blank %}
+                  <h4>{{ list_block.settings.step_title }}</h4>
+                {% endif %}
+                {% if list_block.settings.step_content != blank %}
+                  <div class="richText">{{- list_block.settings.step_content | strip_html -}}</div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+<script>
+  // Select the `p` element inside `.IngredientsBox .metafield-rich_text_field`
+let content = $(".IngredientsBox .metafield-rich_text_field p").html();
+
+// Replace `<br><br>` with `<br>`
+content = content.replace(/<br>\s*<br>/g, '<br>');
+
+// Update the HTML content
+$(".IngredientsBox .metafield-rich_text_field p").html(content);
+</script>
+{% schema %}
+{
+  "name": "Article Instructions",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "ingredients_heading",
+      "label": "Ingredients Heading",
+      "default": "Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "instructions_heading",
+      "label": "Instructions Heading",
+      "default": "Instructions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient_list",
+      "name": "Ingredient List",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "List Title"
+        },
+        {
+          "type": "richtext",
+          "id": "items",
+          "label": "List Items",
+          "default": "<ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>",
+          "info": "Enter the list items in HTML format or as a bulleted list."
+        }
+      ]
+    },
+    {
+      "type": "instruction_step",
+      "name": "Instruction Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "Step Title"
+        },
+        {
+          "type": "richtext",
+          "id": "step_content",
+          "label": "Step Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Insturction",
+      "category": "Insturction"
+    }
+  ]
+}
+
+{% endschema %}

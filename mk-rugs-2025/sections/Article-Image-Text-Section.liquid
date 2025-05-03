@@ -1,0 +1,87 @@
+{% if section.settings.heading != blank %}
+<section class="Image-text-Section" style="background-color: {{ section.settings.background_color }};">
+  <div class="container">
+    <div class="dflex {% if section.settings.direction == 'row-reverse' %}row-reverse{% endif %}">
+      <div class="contentSection">
+        <h2>{{ section.settings.heading }}</h2>
+        <div class="richText">{{ section.settings.paragraph_content }}</div>
+        {% if section.settings.link_text != blank %}
+        <a href="{{ section.settings.link_url }}" target="_blank">{{ section.settings.link_text }} →</a>
+        {% else %} 
+        <a href="https://www.instagram.com/reel/Cu7qc32MV8M/" target="_blank">Watch the dish →</a>
+         {% endif %} 
+      </div>
+      <div class="ImageSection">
+        <img src="{{ section.settings.image_url | img_url: 'original' }}" alt="Image">
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Article Image-Text",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading Text",
+      "default": "Upgrade your lunch game with this pan-seared salmon wrap featuring a tasty parmesan aioli."
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_content",
+      "label": "Paragraph Content"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_url",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text"
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Direction",
+      "options": [
+        {
+          "value": "row",
+          "label": "Left to Right"
+        },
+        {
+          "value": "row-reverse",
+          "label": "Right to Left"
+        }
+      ],
+      "default": "row"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image And Text",
+      "category": "Image And Text"
+    }
+  ]
+}
+{% endschema %}

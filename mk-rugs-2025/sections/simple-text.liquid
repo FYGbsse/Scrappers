@@ -1,0 +1,67 @@
+<div class="simple-Text {% if section.settings.extraclass != blank %}{{ section.settings.extraclass}}{% endif %}">
+    <div class="{% if section.settings.fullcontainer %}container {% endif %}">
+      <div class="Inner-Content">
+          {% if section.settings.Heading != blank %}
+            <h1>{{section.settings.Heading }}</h1>
+          {% endif %}
+          <div class="content">
+            {% if section.settings.Paragraph != blank %}
+              <p>{{ section.settings.Paragraph }}</p>
+            {% endif %}
+            {% if section.settings.SubHeading != blank %}
+            <h4>{{section.settings.SubHeading }}</h4>
+            {% endif %}
+          </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Simple Text",
+    "settings": [
+        {
+         "type": "checkbox",
+         "id": "fullcontainer",
+         "label": "Within Container",
+         "default": false
+        },
+        {
+         "type": "text",
+         "id": "Heading",
+         "label": "Heading",
+         "default": "Enter your text"
+        },
+      
+        {
+         "type": "text",
+         "id": "SubHeading",
+         "label": "Sub Heading",
+         "default": "Enter your text"
+        },
+        {
+         "type": "textarea",
+         "id": "Paragraph",
+         "label": "Paragraph",
+         "default": "Enter your paragraph"
+        },
+        {
+         "type": "text",
+         "id": "extraclass",
+         "label": "add class"
+        }
+    ],
+   "presets": [
+        {
+         "category": "Simple-Text",
+         "name": "Simple Text Box"
+        }
+ ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

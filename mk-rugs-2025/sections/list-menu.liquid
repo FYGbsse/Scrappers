@@ -1,0 +1,99 @@
+<div class="Menu-List {% if section.settings.extraclass != blank %}{{ section.settings.extraclass}}{% endif %}">
+  <ul>
+    {% for block in section.blocks %}
+      <li><a href="{{ block.settings.btn-link}}">{{ block.settings.Menu }}</a></li>
+    {% endfor %}
+  </ul>
+  <ul class="Mobile-List">
+   
+    {% for block in section.blocks %}
+      <li><a href="{{ block.settings.btn-link}}">{{ block.settings.Menu }}</a></li>
+    {% endfor %}
+    
+  </ul>
+</div>
+
+<style>
+
+.Mobile-List::-webkit-scrollbar {
+  width: 2px;
+  height:2px;
+}
+
+.Mobile-List::-webkit-scrollbar-track {
+  background: #f4f0e8;
+}
+
+.Mobile-List::-webkit-scrollbar-thumb {
+  background: #f4f0e8;
+} 
+
+.Mobile-List::-webkit-scrollbar-thumb:hover {
+  background: #f4f0e8;
+}
+  
+.About-page-List .Mobile-List::-webkit-scrollbar-track {
+  background: #795d50;
+}
+
+.About-page-List .Mobile-List::-webkit-scrollbar-thumb {
+  background: #795d50;
+} 
+
+.About-page-List .Mobile-List::-webkit-scrollbar-thumb:hover {
+  background: #795d50;
+}
+
+.Menu-List ul li {
+  margin-bottom:0px !important
+}
+  
+</style>
+
+
+
+{% schema %}
+  {
+    "name": "Items List",
+    "settings": [
+      {
+       "type": "text",
+       "id": "extraclass",
+       "label": "add class"
+      }
+    ],
+"blocks": [
+	{
+		"name": "Items",
+		"type": "Items",
+		"settings": [
+			{
+				"type":"text",
+				"id":"Menu",
+				"label":"Your Item"
+ 			},
+            {
+              "type": "url",
+              "label": "Item Link",
+              "id": "Item-link"
+            }
+		]
+	}
+],
+"presets": [
+	{
+		"category": "Items-list",
+		"name": "Items List"
+	}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+
+
+{% javascript %}
+
+{% endjavascript %}

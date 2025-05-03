@@ -1,0 +1,61 @@
+    <div class="TickerNews">
+      <div class="container">
+          <div class="ti_wrapper">
+              <div class="ti_slide">
+                  <div class="ti_content">
+                      {% for block in section.blocks %}
+                        <div class="ti_news"><a href="#">{{ block.settings.Menu }}</a></div>
+                      {% endfor %}
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+<style>
+  
+</style>
+
+<!-- 
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script> -->
+<script type="text/javascript">
+    $(function(){
+        _Ticker = $(".TickerNews").newsTicker();
+    });
+</script>
+
+
+{% schema %}
+  {
+    "name": "Scroll Items",
+    "settings": [
+      {
+       "type": "text",
+       "id": "extraclass",
+       "label": "add class"
+      }
+    ],
+"blocks": [
+	{
+		"name": "Items",
+		"type": "Items",
+		"settings": [
+			{
+				"type":"text",
+				"id":"Menu",
+				"label":"Your Item"
+ 			}
+		]
+	}
+],
+"presets": [
+	{
+		"category": "Scrolling-Bar",
+		"name": "Scrolling Bar"
+	}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+

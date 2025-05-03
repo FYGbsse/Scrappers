@@ -1,0 +1,194 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<div class="Faq-Policies">
+ <div class="{% if section.settings.fullcontainer %}container {% endif %}">
+  <div class="FAQ-Section {% if section.settings.extraclass != blank %}{{ section.settings.extraclass}}{% endif %}">
+    {% if section.settings.Page_title != blank %}  
+      <h2>{{ section.settings.Page_title }}</h2>
+    {% endif %}
+  <div class="" id="originalsection">
+    {% if section.settings.faq_title !=blank or section.settings.faq_desc != blank %}
+    <div class="head_wrapper">
+      <div class="title">
+        <h5>{{ section.settings.faq_title }}</h5>
+      </div>
+    {% if section.settings.faq_desc != blank %}
+      <div class="desc">
+        <p>{{ section.settings.faq_desc }}</p>
+      </div>
+    {% endif %}
+    </div>
+    {% endif %}
+  {% for block in section.blocks %}
+  {% if block.type == "faqs_heading" %}
+  <div class="boxces heading_wrapper {{block.settings.headType}}" id="head_{{block.settings.headType | handleize}}">
+    <h1>{{block.settings.heading}}</h1>
+  </div>
+  {% endif %}
+    {% if block.type == "accordion" %}
+  <div class="accordion_wrapper {% if forloop.index == 1 %} is-open {% endif %} {{block.settings.faqType}}">
+    <button class="accordion {% if section.settings.enableIcon %} faqIcon{% endif %}"><img src="{{ block.settings.accordionIcon | img_url: 'master'}}" data-src="{{ img-url }}" alt="">{{block.settings.question}}</button>
+    <div class="accordion-content{% if section.settings.enableIcon %} faqIconEnable{% endif %}">
+      <p>{{block.settings.answer}}</p>
+    </div>
+  </div>
+ 
+  {% endif %}
+
+  {% endfor %}
+    {% if section.settings.AboutInfo != blank %}
+      <div class="Policy-Info">
+        <p>{{ section.settings.AboutInfo }}</p>
+      </div>
+    {% endif %}
+   </div>
+  </div>
+ </div>
+</div>
+
+<style>
+
+  
+</style>
+
+<script>
+//   var accordionBtns = document.querySelectorAll(".accordion_wrapper");
+// var accordionBtns1 = document.querySelectorAll(".accordion_wrapper");
+// accordionBtns.forEach((accordion_wrapper) => {
+//   accordion_wrapper.onclick = function () {
+//     accordionBtns1.forEach((element) => {
+//       element.classList.remove('is-open');
+//     });
+//     this.classList.add("is-open");
+
+//     let content = this.nextElementSibling;
+// //     console.log(content);
+
+//     if (content.style.maxHeight) {
+//       //this is if the accordion is open
+//       content.style.maxHeight = null;
+//     } else {
+//       //if the accordion is currently closed
+//       content.style.maxHeight = content.scrollHeight + "px";
+// //       console.log(content.style.maxHeight);
+//     }
+//   };
+// });
+
+const accordionWrappers = document.querySelectorAll('.accordion_wrapper');
+accordionWrappers.forEach(accordionWrapper => {
+  accordionWrapper.addEventListener('click', () => {
+    if (accordionWrapper.classList.contains('is-open')) {
+      accordionWrapper.classList.remove('is-open');
+    } else {
+      accordionWrappers.forEach(otherWrapper => {
+        if (otherWrapper !== accordionWrapper) {
+          otherWrapper.classList.remove('is-open');
+        }
+      });
+      accordionWrapper.classList.add('is-open');
+    }
+    const content = accordionWrapper.nextElementSibling;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = `${content.scrollHeight}px`;
+    }
+  });
+});
+
+</script>
+
+<script>
+  $(document).ready(function(){
+    var element = $('.accordion-content');
+    var contentHeight = element[0].scrollHeight;
+    console.log(element[0]);
+    $('.accordion-content').first().css('max-height', contentHeight + 'px');
+    $('#originalsection').css('min-height', contentHeight + 'px');
+  });
+  $('.accordion ').on('click',function() {
+    var element = $(this).parent('.accordion_wrapper').find('.accordion-content');
+    var contentHeight = element[0].scrollHeight;
+    $('.accordion-content').css('max-height', '');
+    $(this).parent('.accordion_wrapper').find('.accordion-content').css('max-height', contentHeight + 'px');
+    $('#originalsection').css('min-height', contentHeight + 'px');
+});
+</script>
+
+{% schema %}
+  {
+    "name": "FAQ Accordion Section",
+    "settings": [
+		{
+          "type": "checkbox",
+          "id": "fullcontainer",
+          "label": "In Container",
+          "default": false
+        },
+        {
+		  "type": "text",
+		  "id": "Page_title",
+		  "label": "Main heading"
+        },
+        {
+		  "type": "text",
+		  "id": "faq_title",
+		  "label": "Title",
+		  "default":"FREQUENTLY ASKED QUESTION"
+        },
+        {
+		  "type": "textarea",
+		  "id": "faq_desc",
+		  "label": "Description",
+		  "default":"Lorem Ipsum"
+        },
+        {
+		  "type": "textarea",
+		  "id": "AboutInfo",
+		  "label": "Policies Info"
+        },
+        {
+          "type": "text",
+          "id": "extraclass",
+          "label": "CSS CLASSES"
+        }
+],
+"blocks": [
+	{
+		"name": "Accordion",
+		"type": "accordion",
+		"settings": [
+            {
+                "type": "image_picker",
+                "id": "accordionIcon",
+                "label": "Icon"
+            },
+			{
+				"type":"text",
+				"id":"question",
+				"label":"Question",
+				"default":"Enter FAQ question"
+ 			},
+			{
+				"type":"textarea",
+				"id":"answer",
+				"label":"Answer",
+				"default":"Enter FAQ answer"
+ 			}
+		]
+	}
+],
+"presets": [
+	{
+		"category": "Accordion-Section",
+		"name": "FAQ Accordion Section"
+	}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

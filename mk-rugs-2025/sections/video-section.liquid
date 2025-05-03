@@ -1,0 +1,56 @@
+<div class="Video-Section">
+  <video width="100%" height="100%" src="https://cdn.shopify.com/videos/c/o/v/9e0bd57896a44257b54423227c3f6128.mp4" muted autoplay loop playsinline>
+</video>
+  <div class="video-text">
+    {% if section.settings.SubHeading != blank %}
+      <h4>{{section.settings.SubHeading }}</h4>
+    {% endif %}
+    {% if section.settings.Main-Heading != blank %}
+      <h1>{{section.settings.Main-Heading }}</h1>
+    {% endif %}
+    {% if section.settings.btn_link != blank %}
+      <a href="{{ section.settings.btn_link}}">{{ section.settings.btn_txt }}</a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Video Section",
+    "settings": [
+              {
+               "type": "text",
+               "id": "SubHeading",
+               "label": "Sub Heading"
+              },
+              {
+               "type": "text",
+               "id": "Main-Heading",
+               "label": "Heading"
+              },
+              {
+               "type": "url",
+               "label": "Button Link",
+               "id": "btn_link"
+              },
+              {
+               "type": "text",
+               "id": "btn_txt",
+               "label": "Button Text",
+               "default": "Click here"
+              }
+    ],
+ "presets": [
+        {
+         "category": "Video-Section",
+         "name": "Video Section"
+        }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

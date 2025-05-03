@@ -1,0 +1,58 @@
+<div class="Image-Card {% if section.settings.extraclass != blank %}{{ section.settings.extraclass}}{% endif %}">
+  <div class="container">
+    <div class="Image-card-box">
+        <div class="card-Content">
+            {% if section.settings.Card-Heading != blank %}
+              <h2>{{ section.settings.Card-Heading }}</h2>
+            {% endif %}
+            {% if section.settings.Content != blank %}
+              <p>{{ section.settings.Content }}</p>
+            {% endif %}
+        </div>
+        <div class="icon-image">
+            <img src="{{ section.settings.section-image | img_url:"master" }}" data-src="{{ img_url }}" alt="">
+        </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Image Card",
+    "settings": [
+      {
+       "type": "text",
+       "id": "Card-Heading",
+       "label": "Enter Title"
+      },
+      {
+       "type": "textarea",
+       "id": "Content",
+       "label": "Enter Content"
+      },
+      {
+       "type": "image_picker",
+       "id": "section-image",
+       "label": "Image"
+      },
+      {
+       "type": "text",
+       "id": "extraclass",
+       "label": "add class"
+      }
+    ],
+ "presets": [
+        {
+         "category": "Image-Card",
+         "name": "Image Card"
+        }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

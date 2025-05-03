@@ -1,0 +1,396 @@
+/*
+* Created By : Sajeel Shafqat
+* Company : Teknologics
+* Created Date : 12-Oct-2023
+*
+* All new style updates after created date will be done in this file.
+* 
+*/
+/*--------------------------CSS max-width: 767px ----------------------------*/
+
+@media only screen and (max-width: 767px) {
+   .sweet-july-skin.template-product .productView-details .product-form__submit {
+    position: relative !important;}
+  /*career page*/
+  #careers .careers-Banner .Inner-Content .content p{ font-size:20px !important;}
+  /*SJS Setting banner for mobile*/  
+   body#home-skin .sjs-video-banner video{
+    height: inherit;
+    object-fit: cover;
+  }
+  body#home-skin .sjs-video-banner .fluid-width-video-wrapper{
+    height:590px;
+  }
+  body#home-skin .sjs-video-banner .slick-list.draggable{
+    height: 590px !important;
+  }
+  body#home-skin .sjs-video-banner .adaptive_height.slide-mobile{
+    height: 590px !important;
+  }
+  body#home-skin .sjs-video-banner .adaptive_height.slide-mobile img{
+    object-fit: cover;
+  }
+  body#home-skin   .sjs-video-banner .slide-video + .slide-content > .slide-pc{
+    display:block !important;
+    line-height: 1.4  !important;
+  }
+  body#home-skin   .sjs-video-banner div + .slide-content > h3 > span{
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    line-height: 16.8px
+  }
+  body#home-skin   .sjs-video-banner div + .slide-content > h2{
+    font-size:28px !important;
+    letter-spacing: 1.4px !important;
+    line-height: 39.2px !important;
+    margin-bottom: 15px;
+  }
+  body#home-skin   .sjs-video-banner div:not(.slide-video) + .slide-content > h2,
+  body#home-skin   .sjs-video-banner div:not(.slide-video) + .slide-content > h3{
+    color:#fff !important;
+    border-color: #fff  !important;
+  }
+  body#home-skin   .sjs-video-banner div:not(.slide-video) + .slide-content > a{
+    color:#fff  !important;
+    border-color: #fff  !important;
+  }
+  body#home-skin   .sjs-video-banner div:not(.slide-video) + .slide-content > a:hover{ color:#000  !important;}
+   body#home-skin .sjs-video-banner .slide-content{  text-align:center; }
+
+  body#home-skin .sjs-video-banner li:not(.slick-active) > button{
+    width: 8px !important;
+    height: 8px !important;
+  }
+  body#home-skin .sjs-video-banner li.slick-active > button[aria-selected="true"],
+  .slick-dots li.slick-active button{
+    width: 8px !important;
+    height: 8px !important;
+  }
+  /* drop menu*/
+  body.sweet-july-skin #navigation-mobile  ul.header__submenu.list-menu{  background: #f6f4ee;}
+  /*temparory css fix- product page*/
+  .sweet-july-skin.template-product .productView-details button.product-form__submit {  margin: 0px 0px 20px 0px !important; }
+  /* sj- home slider for november*/
+    .sj-home-slider div.slide-content {
+       text-align: center !important;
+       width: 370px !important;
+    }
+    .sj-home-slider h2.slide-heading.slide-mobile {
+      font-size: 36px !important;
+      font-weight: 600 !important;
+      line-height: 38px !important;
+      font-style: italic !important;
+      letter-spacing: 0em;
+    }
+    .sj-home-slider h3.slide-sub span{
+        font-size: 18px !important;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0em;
+    }
+   .sj-home-slider p.slide-text{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+  }
+  .sj-home-slider a.slide-button{
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 29px;
+      letter-spacing: 0em;
+      height: 45px;
+  }
+    body .sj-home-slider li:not(.slick-active) > button{
+    width: 8px !important;
+    height: 8px !important;
+  }
+  body .sj-home-slider li.slick-active > button[aria-selected="true"],
+  .slick-dots li.slick-active button{
+    width: 8px !important;
+    height: 8px !important;
+  }
+  /* home page two images side by side*/  
+    body#sweet-july div.custom-image-banner-block div.customImageBanner-inner h3.title span{ line-height:36px;}
+    body#sweet-july div.custom-image-banner-block .halo-item{
+    padding-right:15px !important;
+    padding-left:15px !important;}
+    div.text-tek {  top:23% !important;}
+  /*Mobile Grib View*/
+  .tek-skin-desk-grid{ display:none; }
+  div.tek-skin-mob-grid {display:block;  }
+    #shop-all-skin div.tek-skin-mob-grid div.products-grid .product {   width: 50% !important;}
+    #shop-all-skin div.tek-skin-mob-grid .product  div.card-information > div.card-information__wrapper > a > span{
+    height: 30px;  
+    font-family: "GT America" !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 15px !important;
+   }
+    #shop-all-skin div.tek-skin-mob-grid .product  div.card-information > div.card-information__wrapper > div.tekcard-summary {
+    font-family: "GT America";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+   }
+   #shop-all-skin div.tek-skin-mob-grid .product div.card-action{   width:100% !important;  }
+   #shop-all-skin div.tek-skin-mob-grid .product div.card-action button#product-add-to-cart{
+      font-weight: 500 !important;
+      line-height: 28px;
+      letter-spacing: 0em;
+      font-size: 12px;
+      text-indent: -65px !important;
+    }
+    #shop-all-skin div.tek-skin-mob-grid div.card-action  div.price{   min-width: 65px !important; }
+    #shop-all-skin div.tek-skin-mob-grid div.card-action > div > dl > div.price__regular{  display:block;}
+    #shop-all-skin div.tek-skin-mob-grid div.card-action > div > dl > div.price__sale{  display:none;}
+    #shop-all-skin div.tek-skin-mob-grid div.card-information  div.card-action  dl span{
+      font-size: 12px  !important;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0em;
+    }
+    /* MOVING VALENTINE MOBILE TEXT UP*/
+  .sjs-video-banner.valentine-banner .content-box--absolute {   top:25% !important; }
+  body#home-skin div.sjs-video-banner.valentine-banner div+.slide-content>h2{   font-size: 36px !important;   font-weight: 500 !important; }
+    /* nav for skin*/
+   div.Collection-top-Content h2{
+     font-size: 14px !important;
+      padding:15px 0px 0px 0px !important;
+   }
+  .tek-mob-custom-heading{ display:block; padding-left:20px;  }
+  .tek-mob-custom-heading .rich-text__blocks{    text-align:left; }
+  .tek-mob-custom-heading div.rich-text__blocks h2{
+    font-family: "GT America" !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 25px;
+    text-align: left;
+    font-style: normal !important;
+     text-transform: uppercase !important;
+    margin-bottom:30px;
+  }
+ .tek-mob-custom-heading .rich-text__blocks .rich-text__sub{
+   font-family: "GT America";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.045em;
+  }
+ .tek-mob-custom-heading .rich-text__blocks .rich-text__text{
+   margin-top:10px !important;
+     display: flex;
+    flex-direction: row;
+    text-align: left;
+  }
+  .tek-mob-custom-heading .rich-text__blocks .rich-text__text a {
+    font-family: "GT America";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.045em;
+    color:#696969;
+  }
+  .tek-flex-item {
+    background-color: #fff;
+    padding-right:4%;
+  }
+  /*we may also know text right position*/
+      ._category-intro-text h2 {   font-family: "Riviera Nights Medium" !important; }
+      ._category-intro-text p {
+        font-family: Riviera Nights !important;
+        font-weight: 400;
+      }
+      ._category-intro-text div {   margin-top: 0px !important; }
+   /*category page css*/
+    a[class*="image-zoom adaptive_height"]{  padding-top:100%; }
+  .customImageBanner--largeImg img{   object-fit: cover !important;  }
+   .customImageBanner--smallImg img{
+    object-fit: cover !important;
+    padding-right:15px;
+    padding-left:15px;
+  }
+   div.tek_wrapper  div.content{ border-left: unset; }
+  ._customImageBanner--largeImg div.tek_wrapper .des,
+   ._customImageBanner--largeImg div.tek_wrapper h3 span{
+    color:#ffffff !important;
+  }
+  .cate_desk{  display: none;}
+  .tek-category-section .halo-item.customImageBanner--largeImg{  margin-bottom:35px; }
+  /*Free gift section*/
+    .free-gift-purchase .content-box--absolute{
+    text-align: left !important;
+    top: 70% !important;
+    }
+    .free-gift-purchase  .content-box--absolute a{  margin: inherit !important;}
+    .free-gift-purchase .banner-heading{margin-bottom:5px;}
+    /* Home secondary Promotion banner*/
+  .sj-secondary-banner .banner-button span{ color: #ffffff !important;}
+  .sj-secondary-banner .banner-heading{padding:0px;}
+  .sj-secondary-banner .banner-button {border-color:#ffffff !important;}
+  .sj-secondary-banner .content-box--absolute{ top: 70% !important;}
+}
+
+/*--------------------------CSS min-width: 768px ----------------------------*/
+
+@media only screen and (min-width: 768px) {
+
+  /* SJS - Fixing sold out button on product page*/
+  .product-form__buttons button[id="product-add-to-cart"]:disabled{
+      position: unset !important;
+      margin: 0px 0px 6px 0px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+  }
+  /* drop menu*/
+  body.sweet-july-skin ul.header__submenu.list-menu {
+     background-color: transparent !important;
+     padding: 9px 0px 9px 0px !important;
+     box-shadow:unset !important; 
+  }
+  body.sweet-july-skin li.menu-lv-2:not(.navigation_all_mobile) a.menu-lv-2__action.header__menu-item {
+     padding: 10px 20px 10px!important;
+     background: #f4f0e8 !important;
+  }
+   body.sweet-july-skin li.menu-lv-2:not(.navigation_all_mobile) a.menu-lv-2__action.header__menu-item:hover{ color:#8b685b;}  
+  /* hiding sold out - fix sold out button position*/
+  .template-product.product .productView-details .product-form__submit.button[disabled] { margin-top: -10px!important;}
+  /*temparory css fix- product page*/
+  .sweet-july-skin.template-product .productView-details button.product-form__submit { margin: -79px 79px 47px !important;}
+/*category page css*/  
+   div.tek_wrapper  div.content{
+    padding-left:0px;
+    border-left: unset;
+  }
+  .customImageBanner--smallImg div.tek_wrapper img{
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1 / 0.5;
+  }
+ div.tek_wrapper .des {
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      touch-action: none;
+     -ms-touch-action: none;
+  }  
+  div.tek_wrapper h3{  margin: 0px;}
+  div.tek_wrapper .customImageBanner-inner {
+    height:140px;
+    max-height:140px;
+  }  
+  .customImageBanner--largeImg div.tek_wrapper,
+  .customImageBanner--largeImg .tek_wrapper .img-box{  height:100%; }
+  .customImageBanner--largeImg div.tek_wrapper a{     height: calc(100% - 156px);}
+  .customImageBanner--largeImg div.tek_wrapper img{    object-fit: cover !important;}  
+  .tek_wrapper { padding-bottom:{{ section.settings.item_vertical_distance | append: 'px'}};}  
+  a[class*="image-zoom adaptive_height"]{  padding-top:unset;}
+  .cate_mb{   display: none;  } 
+  div.tek_wrapper .content.customImageBanner-inner{  padding:10px 0 30px 0; } 
+  
+}
+/*--------------------------CSS With vary widths ----------------------------*/
+
+/* sj- home slider for november*/
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+     .sj-home-slider h2.slide-headinga {
+      font-size: 48px !important;
+      font-weight: 500 !important;
+      line-height: 52px !important;
+      letter-spacing: 0em  !important;
+      text-align: left;
+    }
+    .sj-home-slider h3.slide-sub spana{
+      font-size: 18px !important;
+      font-weight: 400 !important;
+      line-height: 21px !important;
+      letter-spacing: 0em !important;
+      text-align: left;
+    }
+   .sj-home-slider p.slide-texta{
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    line-height: 25px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+  }
+  .sj-home-slider a.slide-buttona{
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 28px !important;
+    letter-spacing: 0em !important;
+     height: 55px;
+     max-width: 235px;
+     min-width: 179px !important;
+  }
+}
+@media only screen and (min-width: 1025px) {
+     .sj-home-slider h2.slide-heading {
+      font-size: 48px !important;
+      font-weight: 500 !important;
+      line-height: 52px !important;
+      letter-spacing: 0em  !important;
+      text-align: left;
+    }
+    .sj-home-slider h3.slide-sub span{
+      font-size: 18px !important;
+      font-weight: 400 !important;
+      line-height: 21px !important;
+      letter-spacing: 0em !important;
+      text-align: left;
+    }
+   .sj-home-slider p.slide-text{
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    line-height: 25px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+  }
+  .sj-home-slider a.slide-button{
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 28px !important;
+    letter-spacing: 0em !important;
+     height: 55px;
+     max-width: 235px;
+     min-width: 179px !important;
+  }
+}
+/* nav for skin*/
+@media (max-width: 300px) {
+  div.tek-mob-custom-heading div.rich-text__blocks div.rich-text__text {
+    flex-direction: column !important;
+  }
+}
+
+/* equalize the length of button */
+@media (min-width: 1301px){
+  .product-details label:not([name="Color"]).product-form__label.available {
+    min-width: -moz-available;
+    min-width: -webkit-fill-available;
+    min-width: fill-available;
+  }
+}
+/* MOVING VALENTINE MOBILE TEXT UP*/
+@media (min-width: 768px) and (max-width: 1024px){
+    body#home-skin div.sjs-video-banner.valentine-banner .slide-heading {   line-height: 35px !important;}
+}  
+/*category page css*/
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+    div.tek_wrapper h3 a span{
+    font-size: 12px;
+    line-height: 16px;
+  }  
+    div.tek_wrapper .des{
+    font-size: 16px;
+    line-height: 21px;
+    margin-bottom:0px;
+    }   
+    div.tek_wrapper .content.customImageBanner-inner{   padding-bottom:0px !important; }  
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+  .tek-category-section .container-full {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

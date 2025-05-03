@@ -1,0 +1,155 @@
+<div class="{% if section.settings.extraclass != blank %}{{ section.settings.extraclass}}{% endif %}">
+    <div class="Cstm-Images">
+      <div class="Cstm-img Left-Images {% if section.settings.active %}active {% endif %}">
+        <img src="{{ section.settings.Left-image | img_url:"master" }}" data-src="{{ img_url }}" alt="">
+          {% if section.settings.Upper_Heading != blank %}
+            <h2>{{ section.settings.Upper_Heading }}</h2>
+          {% endif %}
+          {% if section.settings.btn_link != blank %}
+            <a href="{{ section.settings.btn_link}}">{{ section.settings.btn_txt }}</a>
+          {% endif %}
+      </div>
+      <div class="Cstm-img Right-Images {% if section.settings.active-Box %}active {% endif %}">
+        <img src="{{ section.settings.Right-image | img_url:"master" }}" data-src="{{ img_url }}" alt="">
+          {% if section.settings.Heading != blank %}
+            <h2>{{ section.settings.Heading }}</h2>
+          {% endif %}
+          {% if section.settings.Second_btn_link != blank %}
+            <a href="{{ section.settings.Second_btn_link}}">{{ section.settings.Second_btn }}</a>
+          {% endif %}
+      </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Products Images",
+    "settings": [
+      {
+       "type": "text",
+       "id": "extraclass",
+       "label": "add class"
+      },
+      {
+       "type": "checkbox",
+       "id": "active",
+       "label": "Show Button",
+       "default": false
+      },
+      {
+        "type": "image_picker",
+        "id": "Left-image",
+        "label": "Left Image"
+      },
+      {
+         "type": "text",
+         "id": "Upper_Heading",
+         "label": "Heading"
+      },
+      {
+         "type": "url",
+         "label": "Button Link",
+         "id": "btn_link"
+      },
+      {
+         "type": "text",
+         "id": "btn_txt",
+         "label": "Button Text",
+         "default": "Click here"
+      },
+      {
+       "type": "checkbox",
+       "id": "active-Box",
+       "label": "Show Button",
+       "default": false
+      },
+      {
+        "type": "image_picker",
+        "id": "Right-image",
+        "label": "Right Image"
+      },
+      {
+         "type": "text",
+         "id": "Heading",
+         "label": "Heading"
+      },
+      {
+         "type": "text",
+         "id": "Second_btn",
+         "label": "Second Button Text",
+         "default": "Click here"
+      },
+      {
+         "type": "url",
+         "label": "Button Link",
+         "id": "Second_btn_link"
+      },
+      {
+          "type": "range",
+          "id": "image-height",
+          "label": "Images Height",
+          "default": 500,
+          "min": 0,
+          "max": 1000,
+          "step": 50,
+          "unit": "px"
+      },
+      {
+          "type": "range",
+          "id": "image-height-mobile",
+          "label": "Images Height For Mobile",
+          "default": 500,
+          "min": 0,
+          "max": 1000,
+          "step": 50,
+          "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "image-overlay",
+        "label": "Image Overlay",
+        "default": "#000000"
+      },
+      {
+        "type": "range",
+        "id": "opacity",
+        "label": "Overlay Opacity",
+        "default": 30,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "%"
+      }
+
+    ],
+"presets": [
+	{
+		"category": "Products Images",
+		"name": "Products Images"
+	}
+]
+  }
+{% endschema %}
+
+
+<style>
+
+#shopify-section-{{ section.id }} .Cstm-Images .Cstm-img::before {
+  background: {{section.settings.image-overlay}} !important;
+  opacity: {{section.settings.opacity}}%;
+}
+
+#shopify-section-{{ section.id }} .Cstm-Images .Cstm-img img {
+  height: {{ section.settings.image-height }}px;
+}
+
+@media(max-width:767px){
+    .Cstm-Images .Cstm-img img {
+        height: {{ section.settings.image-height-mobile }}px !important;
+    }
+}
+
+</style>
+
+{% javascript %}
+{% endjavascript %}

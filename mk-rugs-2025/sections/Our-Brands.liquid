@@ -1,0 +1,83 @@
+<div class="{% if section.settings.extraclass != blank %}{{ section.settings.extraclass}}{% endif %}">
+  <div class="container">
+      {% if section.settings.Brands-Heading != blank %}
+        <h2>{{section.settings.Brands-Heading }}</h2>
+      {% endif %}
+    <div class="Our-Brands">
+      {% for block in section.blocks %}
+          <div class="BrandBox">
+              {% if block.settings.BrandContent != blank %}
+                  <div class="Brand-Content">
+                      <p>{{ block.settings.BrandContent }}</p>
+                  </div>
+              {% endif %}
+            <div class="Brand-Image">
+                <img src="{{ block.settings.Brand-image | img_url:"master" }}" data-src="{{ img_url }}" alt="">
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+    {% if section.settings.btn_link != blank %}
+      <a href="{{ section.settings.btn_link}}">{{ section.settings.btn_text }}</a>
+    {% endif %}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Our Brands",
+    "settings": [
+      {
+       "type": "text",
+       "id": "Brands-Heading",
+       "label": "Brands Heading"
+      },
+      {
+         "type": "text",
+         "id": "btn_text",
+         "label": "Button Text"
+      },
+      {
+         "type": "url",
+         "label": "Button Link",
+         "id": "btn_link"
+      },
+      {
+       "type": "text",
+       "id": "extraclass",
+       "label": "add class"
+      }
+    ],
+"blocks": [
+	{
+		"name": "Brands",
+		"type": "Brands",
+		"settings": [
+			{
+				"type":"textarea",
+				"id":"BrandContent",
+				"label":"Brand Content"
+ 			},
+            {
+                "type": "image_picker",
+                "id": "Brand-image",
+                "label": "Brand Image"
+            }
+		]
+	}
+],
+"presets": [
+	{
+		"category": "Our-Brands",
+		"name": "Our Brands"
+	}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

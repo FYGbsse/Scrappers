@@ -1,0 +1,124 @@
+<div class="Image-Cards {% if section.settings.extraclass != blank %}{{ section.settings.extraclass}}{% endif %}">
+  <div class="container">
+    {% if section.settings.Section-Heading != blank %}
+      <h2>{{ section.settings.Section-Heading }}</h2>
+    {% endif %}
+    <div class="Image-boxes">
+      {% for block in section.blocks %}
+      <a href="{{ block.settings.Card_link}}" target="{% if block.settings.newtab %} _blank {% endif %}">
+        <div class="Image-Box">
+          <img src="{{ block.settings.section-image | img_url:"master" }}" data-src="{{ img_url }}" alt="">
+          <div class="Card-Content-Box">
+          {% if block.settings.tag != blank %}
+            <p>{{ block.settings.tag }}</p>
+          {% endif %}
+          {% if block.settings.Cardtitle != blank %}
+            <h3>{{ block.settings.Cardtitle }}</h3>
+          {% endif %}
+            <div class="Info-Box">
+              <div class="By">
+                {% if block.settings.By != blank %}
+                  <p>{{ block.settings.By }}</p>
+                {% endif %}
+              </div>
+              <div class="Day">
+                {% if block.settings.Day != blank %}
+                    <p>{{ block.settings.Day }}</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>    
+      </a>
+      {% endfor %}
+    </div>
+      {% if section.settings.Stories_link != blank %}
+        <div class="Card-Button">
+            <a href="{{ section.settings.Stories_link}}">{{ section.settings.Button }}</a>
+        </div>
+      {% endif %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "CheckOut Box",
+    "settings": [
+      {
+       "type": "text",
+       "id": "Section-Heading",
+       "label": "Enter Heading"
+      },
+      {
+         "type": "url",
+         "label": "Button Link",
+         "id": "Stories_link"
+      },
+      {
+         "type": "text",
+         "id": "Button",
+         "label": "Button Text"
+      },
+      {
+       "type": "text",
+       "id": "extraclass",
+       "label": "add class"
+      }
+    ],
+"blocks": [
+	{
+		"name": "Blog Card",
+		"type": "Card",
+		"settings": [
+              {
+                 "type": "url",
+                 "label": "Card Link",
+                 "id": "Card_link"
+              },
+              {
+                 "type": "checkbox",
+                 "id": "newtab",
+                 "label": "Target Blank",
+                 "default": false
+              },
+              {
+               "type": "image_picker",
+               "id": "section-image",
+               "label": "Image"
+              },
+              {
+               "type": "textarea",
+               "id": "tag",
+               "label": "Add Tag"
+              },
+              {
+               "type": "text",
+               "id": "Cardtitle",
+               "label": "Enter Card Title"
+              },
+              {
+               "type": "textarea",
+               "id": "By",
+               "label": "Add By"
+              },
+              {
+               "type": "textarea",
+               "id": "Day",
+               "label": "Day"
+              }
+		]
+	}
+],
+ "presets": [
+        {
+         "category": "CheckOut-Box",
+         "name": "CheckOut Box"
+        }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

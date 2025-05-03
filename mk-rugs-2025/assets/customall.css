@@ -1,0 +1,21 @@
+
+/* Custom Fonts */
+@font-face {
+    font-body-family: 'Saol Display';
+    src: url('SaolDisplay-Regular.eot');
+    src: url('SaolDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+        url('SaolDisplay-Regular.woff2') format('woff2'),
+        url('SaolDisplay-Regular.woff') format('woff'),
+        url('SaolDisplay-Regular.ttf') format('truetype'),
+        url('SaolDisplay-Regular.svg#SaolDisplay-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body {
+   font-family: 'Saol Display' !important;
+}
+
+

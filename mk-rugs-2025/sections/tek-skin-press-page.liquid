@@ -1,0 +1,156 @@
+{% schema %}
+{
+  "name": "Skin Press Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "press_title",
+      "label": "Page Title",
+      "default": "Latest Press"
+    },
+    {
+      "type": "richtext",
+      "id": "press_description",
+      "label": "Page Description",
+      "default": "<p>Read our latest press features and media articles.</p>"
+    }
+  ],
+  "presets": [{
+    "name": "Skin Press Page"
+  }
+    
+  ]
+}
+{% endschema %}
+
+<div class="press-page-section pps" style="padding:80px 15px 10px 15px;">
+  <div class="pii_header" style="text-align: center;padding: 0px 20px 50px 20px;">
+  <h1 style="font-size: 48px;text-transform: uppercase;font-style: normal;font-weight: 600;">{{ section.settings.press_title }}</h1>
+  <div class="section-description">{{ section.settings.press_description }}</div>
+  </div>
+  <div class="press-grid">
+    {% paginate blogs['press-skin'].articles by 6 %} 
+    {% for article in blogs['press-skin'].articles %}
+      <div class="press-item">
+          <div class="press-item-inner">
+              <h3 class="pii_title">
+                <strong><a href="{{ article.metafields.custom.press_url }}" rel="noopener" target="_blank" aria-label="{{ article.title }}">
+                {{ article.title }}
+                </a></strong>
+             </h3>
+              <div class="pii__excerpt">
+                 {{ article.content | split: '<!-- split -->' | last }}
+              </div>
+              <a class="pii__read-more" href="{{ article.metafields.custom.press_url }}" aria-label="READ MORE (opens in a new tab)"  rel="noopener" target="_blank"><u>READ MORE</u></a>
+          </div>
+      </div>
+    {% endfor %}
+      </div>           
+  <!-- Pagination Links -->
+  <div class="pagination">
+    {% if paginate.previous %}
+      <a href="{{ paginate.previous.url }}" class="pagination__prev">« Previous</a>
+    {% endif %}
+
+    {% for part in paginate.parts %}
+      {% if part.is_link %}
+        <a href="{{ part.url }}" class="pagination__link">{{ part.title }}</a>
+      {% else %}
+        <span class="pagination__current">{{ part.title }}</span>
+      {% endif %}
+    {% endfor %}
+
+    {% if paginate.next %}
+      <a href="{{ paginate.next.url }}" class="pagination__next">Next »</a>
+    {% endif %}
+  </div>
+
+  {% endpaginate %}
+
+</div>
+<style>
+  .pps .press-grid{
+    display: grid;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: stretch;
+    grid-template-columns: repeat(3, 1fr)
+  }
+  .pps .press-item{
+    display: flex;
+    padding: 10px 30px 40px 30px;
+    flex-direction: column;
+    transition-duration: .25s;
+    transition-property: background, border, box-shadow;
+    hidden:overflow;
+    text-align: center;
+  }
+  .pps .pii_title{
+    -webkit-text-stroke-color: #000;
+    stroke: #000;
+    margin-bottom: 20px;
+    
+  }
+  .pps .pii_title a{
+    color: #000000;
+    font-family: "GT America Expanded", Sans-serif !important;
+    text-decoration: none;
+    line-height: 40px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.8px;
+  }
+
+    .pps .pii__excerpt{
+    color: #000000;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22.5px;
+    margin: 0;
+    margin-bottom: 18px;
+   font-family: "GT America", Sans-serif !important;
+    }
+    .pii__read-more{
+    font-family "GT America Regular", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    height: 14px;
+    line-height:14px;
+    text-align: center;
+    text-decoration-color: rgb(0, 0, 0);
+   }
+  .pps .pagination {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.pps .pagination__link,
+.pps .pagination__prev,
+.pps .pagination__next {
+  display: inline-block;
+  padding: 10px 8px;
+  margin: 0 5px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.pps .pagination__link:hover,
+.pps .pagination__prev:hover,
+.pps .pagination__next:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.pps .pagination__current {
+  padding: 10px 8px;
+  margin: 0 5px;
+  color: #adadad;
+  border-radius: 4px;
+}
+  @media only screen and (max-width: 767px){
+    .pps .press-grid{ grid-template-columns: repeat(1, 1fr)}.press-item{border: none;}
+   
+    
+  }
+</style>

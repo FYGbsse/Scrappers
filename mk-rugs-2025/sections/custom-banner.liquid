@@ -1,0 +1,300 @@
+<div class="banner {% if section.settings.vertical-alignment == 'v-top'  %}vertical-top {% elsif section.settings.vertical-alignment == 'v-middle'  %}vertical-middle {% elsif section.settings.vertical-alignment == 'v-bottom'  %}vertical-bottom {% endif %} {% if section.settings.extraclass != blank %}{{ section.settings.extraclass}}{% endif %}">
+  <div class="container {% if section.settings.horizontal-alignment == 'h-center'  %}horizontal-center {% elsif section.settings.horizontal-alignment == 'h-left'  %}horizontal-left {% elsif section.settings.horizontal-alignment == 'h-right'  %}horizontal-right {% endif %}">
+      <div class="bannerContent {% if section.settings.text-alignment == 'align-Center'  %}text-center {% elsif section.settings.text-alignment == 'align-left'  %}text-left {% elsif section.settings.text-alignment == 'align-right'  %}text-right {% endif %}">
+        {% if section.settings.banner-heading != blank %}  
+          <h2>{{ section.settings.banner-heading }}</h2>
+        {% endif %}
+        {% if section.settings.banner-text != blank %}  
+          <p>{{ section.settings.banner-text }}</p>
+        {% endif %}
+        {% if section.settings.btn-link != blank %}
+        <a href="{{ section.settings.btn-link}}">{{ section.settings.btn-text }}</a>
+        {% endif %}
+      </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Page Banner",
+  "settings": [
+                {
+                    "type": "range",
+                    "id": "padding-top",
+                    "label": "Padding Top",
+                    "default": 50,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px"
+                },
+                {
+                    "type": "range",
+                    "id": "padding-bottom",
+                    "label": "Padding Bottom",
+                    "default": 50,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px"
+                },
+              {
+                "type": "image_picker",
+                "id": "banner-image",
+                "label": "Background Image"
+              },
+              {
+                "type": "image_picker",
+                "id": "mobile_image",
+                "label": "Mobile Image"
+              },
+              {
+                "type": "color",
+                "id": "background-color",
+                "label": "Background Color"
+              },
+              {
+                "type": "color",
+                "id": "image-overlay",
+                "label": "Image Overlay",
+                "default": "#000000"
+              },
+              {
+                "type": "range",
+                "id": "opacity",
+                "label": "Opacity",
+                "default": 30,
+                "min": 0,
+                "max": 100,
+                "step": 10,
+                "unit": "%"
+              },
+              {
+                  "type": "range",
+                  "id": "banner-height",
+                  "label": "Image Height",
+                  "default": 500,
+                  "min": 0,
+                  "max": 1000,
+                  "step": 50,
+                  "unit": "px"
+              },
+              {
+                  "type": "range",
+                  "id": "Mobile-height",
+                  "label": "Image Height Mobile",
+                  "default": 500,
+                  "min": 0,
+                  "max": 1000,
+                  "step": 50,
+                  "unit": "px"
+              },
+              {
+                  "type": "select",
+                  "id": "horizontal-alignment",
+                  "label": "Horizontal Alignment",
+                  "default": "h-left",
+                  "options": [
+                      {
+                          "value": "h-left",
+                          "label": "Left"
+                      },
+                      {
+                          "value": "h-center",
+                          "label": "Center"
+                      },
+                      {
+                          "value": "h-right",
+                          "label": "Right"
+                      }
+                  ]
+              },
+              {
+                  "type": "select",
+                  "id": "vertical-alignment",
+                  "label": "Vertical Alignment",
+                  "default": "v-middle",
+                  "options": [
+                      {
+                          "value": "v-top",
+                          "label": "top"
+                      },
+                      {
+                          "value": "v-middle",
+                          "label": "middle"
+                      },
+                      {
+                          "value": "v-bottom",
+                          "label": "bottom"
+                      }
+                  ]
+              },
+              {
+                  "type": "select",
+                  "id": "text-alignment",
+                  "label": "Text Alignment",
+                  "default": "align-left",
+                  "options": [
+                      {
+                          "value": "align-left",
+                          "label": "left"
+                      },
+                      {
+                          "value": "align-Center",
+                          "label": "center"
+                      },
+                      {
+                          "value": "align-right",
+                          "label": "right"
+                      }
+                  ]
+              },
+              {
+                "type": "checkbox",
+                "id": "box-background-enable",
+                "label": "Enable Background",
+                "default": true
+              },
+              {
+                  "type": "color",
+                  "id": "box-background-color",
+                  "label": "Box background",
+                  "default": "#ffffff"
+              },
+              {
+                  "type": "text",
+                  "id": "banner-heading",
+                  "label": "Banner Heading",
+                  "default": "Banner Heading"
+              },
+              {
+                  "type": "textarea",
+                  "id": "banner-text",
+                  "label": "Banner Paragraph",
+                  "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+              },
+              {
+                "type": "url",
+                "label": "Button Link",
+                "id": "btn-link",
+                "info": "Add link to view button"
+              },
+              {
+                "type": "text",
+                "id": "btn-text",
+                "label": "Icon Button",
+                "default": "Click here"
+              },
+              {
+                "type": "text",
+                "id": "extraclass",
+                "label": "CSS CLASSES"
+              }
+
+],
+  "presets":  [
+    {
+      "category": "banner",
+      "name": "Page Banner"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+
+{% if section.settings.box-background-enable %}
+#shopify-section-{{ section.id }} .bannerContent {
+  background: {{ section.settings.box-background-color }};
+  padding: 30px;
+}
+{% endif %}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#shopify-section-{{ section.id }} .banner::before {
+  background: {{section.settings.image-overlay}} !important;
+  opacity: {{section.settings.opacity}}%;
+}
+
+#shopify-section-{{ section.id }} .banner {
+  padding-bottom: {{section.settings.padding-bottom}}px;
+  padding-top: {{section.settings.padding-top}}px;
+  background: url({% if section.settings.banner-image != blank %}{{section.settings.banner-image | img_url: 'master'}}{% else %}{{ "Dummy.svg" | asset_url }}{% endif %}) no-repeat;
+  background-size: cover !important;
+  background-color: {{ section.settings.background-color }};
+  background-position: center;
+  height: {{ section.settings.banner-height }}px;
+  display: flex;
+  position: relative;
+}
+
+.bannerContent{
+  z-index: 2;  
+}
+
+.bannerContent{
+  max-width: 600px;
+  width: 100%;
+}
+
+.horizontal-center{
+  display: flex;
+  justify-content: center;
+}
+
+.horizontal-left{
+  display: flex;
+  justify-content: start;
+}
+
+.horizontal-right{
+  display: flex;
+  justify-content: end;
+}
+
+.vertical-top {
+  align-items: flex-start;
+}
+
+.vertical-middle {
+  align-items: center;
+}
+
+.vertical-bottom {
+  align-items: flex-end;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-right{
+  text-align: right;
+}
+
+
+@media(max-width:767px){
+  #shopify-section-{{ section.id }} .banner {
+    background: url({% if section.settings.mobile_image != blank %}{{section.settings.mobile_image | img_url: 'master'}}{% endif %}) no-repeat;
+    background-size: cover !important;
+    background-position: center;
+    height: {{ section.settings.Mobile-height }}px !important;
+  }
+}
+
+</style>

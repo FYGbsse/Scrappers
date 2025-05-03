@@ -1,0 +1,36 @@
+{% comment %}
+{%- liquid
+    if product.metafields.c_f.short_description
+        assign desc = product.metafields.c_f.short_description
+        assign word_number = 100000
+    else
+        assign desc = product.description | strip_html
+    assign word_number = 44
+    endif
+-%}
+<div class="card-summary {{ class }}">
+    {{ desc | truncatewords: word_number }}
+</div>
+
+
+This is orginal code that is commented  {% endcomment %}
+
+{% comment %} code add on 311023 by tek from L19-27{% endcomment %}
+{%- liquid
+    if product.metafields.custom.tek_product_excerpt
+        assign desc = product.metafields.custom.tek_product_excerpt
+        assign word_number = 100000
+    else
+        assign desc = product.description | strip_html
+    assign word_number = 44
+    endif
+-%}
+
+<div class="card-summary {{ class }}">
+  {{ desc | truncatewords: word_number }}
+</div>
+
+{% comment %} code add on 311023 by tek from L34-36{% endcomment %}
+<div class="tekcard-summary {{ class }}">
+  {{ desc | truncatewords: word_number }}
+</div>

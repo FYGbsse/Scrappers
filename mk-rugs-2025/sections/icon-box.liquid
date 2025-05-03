@@ -1,0 +1,86 @@
+<div class="{% if section.settings.extraclass != blank %}{{ section.settings.extraclass}}{% endif %}">
+  <div class="container">
+    <div class="iconBoxes">
+      {% for block in section.blocks %}
+        <div class="IconBox">
+          <div class="icon-Image">
+            {% if block.settings.icon != blank %}
+            <img src="{{ block.settings.icon | img_url:"master" }}" data-src="{{ img_url }}" alt="">
+            {% endif %}
+          </div>
+          <div class="Icon-Content">
+            {% if block.settings.Title != blank %}
+              <h3>{{ block.settings.Title }}</h3>
+            {% endif %}
+            {% if block.settings.Content != blank %}
+              <p>{{ block.settings.Content }}</p>
+            {% endif %}
+            {% if block.settings.Button-Link != blank %}
+              <a href="{{ section.settings.Button-Link}}">{{ block.settings.Button }}</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Icon Box",
+    "settings": [
+      {
+       "type": "text",
+       "id": "extraclass",
+       "label": "add class"
+      }
+    ],
+"max_blocks": 9,
+"blocks": [
+	{
+		"name": "Icon Box",
+		"type": "iconbox",
+		"settings": [
+              {
+               "type": "image_picker",
+               "id": "icon",
+               "label": "Image"
+              },
+              {
+               "type": "text",
+               "id": "Title",
+               "label": "Enter Title"
+              },
+              {
+               "type": "textarea",
+               "id": "Content",
+               "label": "Enter Content"
+              },
+              {
+               "type": "url",
+               "label": "Button Link",
+               "id": "Button-Link"
+              },
+              {
+               "type": "text",
+               "id": "Button",
+               "label": "Button Text",
+               "default": "Click here"
+              }
+		]
+	}
+],
+"presets": [
+	{
+		"category": "Icon-Box",
+		"name": "Icon Box"
+	}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

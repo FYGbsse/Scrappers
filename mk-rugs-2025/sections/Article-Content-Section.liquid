@@ -1,0 +1,50 @@
+{% if section.settings.heading != blank %}
+<section class="simplePostContent postContainer" style="background-color: {{ section.settings.background_color }};">
+  <h3>{{ section.settings.heading }}</h3>
+  <div class="richText">{{ section.settings.rich_content }}</div>
+  <figure class="wp-caption">
+    <img src="{{ section.settings.image_url | img_url: 'original' }}">
+    <figcaption class="widget-image-caption wp-caption-text">{{ section.settings.image_caption }}</figcaption>
+  </figure>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Article Content",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading Text"
+    },
+    {
+      "type": "richtext",
+      "id": "rich_content",
+      "label": "Main Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_url",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_caption",
+      "label": "Image Caption"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article Content Section",
+      "category": "Article Content Section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,205 @@
+
+@font-face {
+    font-family: 'Saol Display';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolDisplay-RegularItalic.woff2') format('woff2'),
+         url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolDisplay-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Saol Text Bold Italic';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/saol_text_bold_italic.woff2') format('woff2'),
+         url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/saol_text_bold_italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Saol Display';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolDisplay-Regular.woff2') format('woff2'),
+         url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Saol Display Regular';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolDisplay-Regular.woff2') format('woff2'),
+         url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Saol Display Italic';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolDisplay-SemiboldItalic.woff2') format('woff2'),
+         url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolDisplay-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Saol Display';
+  
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolDisplay-Bold.woff2') format('woff2'),
+         url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolDisplay-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Saol Text Book';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolText-Book.woff2') format('woff2'),
+         url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolText-Book.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Saol Text';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolText-SemiboldItalic.woff2') format('woff2'),
+         url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolText-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Saol Text';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolText-Semibold.woff2') format('woff2'),
+         url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/SaolText-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/GTAmerica-Regular.woff2') format('woff2'),
+         url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/GTAmerica-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America Extended';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/GTAmerica-ExtendedRegular.woff2') format('woff2'),
+         url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/GTAmerica-ExtendedRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America Light';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/GTAmerica-Light.woff2') format('woff2'),
+         url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/GTAmerica-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {font-family: "GT America Expanded Bold"; src: url("//db.onlinewebfonts.com/t/22b4c73e6141de7c9937f42cb58bdb4b.eot"); src: url("//db.onlinewebfonts.com/t/22b4c73e6141de7c9937f42cb58bdb4b.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/22b4c73e6141de7c9937f42cb58bdb4b.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/22b4c73e6141de7c9937f42cb58bdb4b.woff") format("woff"), url("//db.onlinewebfonts.com/t/22b4c73e6141de7c9937f42cb58bdb4b.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/22b4c73e6141de7c9937f42cb58bdb4b.svg#GT America Expanded Bold") format("svg"); }
+
+@font-face {
+    font-family: 'GT America Expanded';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/GTAmerica-ExpandedMedium.woff2?v=1689003903') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/GTAmerica-ExpandedMedium.woff?v=1689003903') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Copyright Klim Type Foundry';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/Pitch-Regular.woff2?v=1689158786') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/Pitch-Regular.woff?v=1689158786') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT America medium';
+  src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/GTAmerica-Medium.woff2?v=1694172328') format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/GTAmerica-Medium.woff?v=1694172328') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: 'Riviera Nights';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/RivieraNights-Regular.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/RivieraNights-Regular.woff') format('woff'),
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Riviera Nights Medium';
+    src: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/RivieraNights-Medium.woff2') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/RivieraNights-Medium.woff') format('woff'),
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+.price *, .skin-footer-bottom .bottom-bar p a, .skin-footer-bottom .bottom-bar p{
+  font-family: 'Copyright Klim Type Foundry' !important;
+}
+
+
+.productView-moreItem .productView-buttons{
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+}
+
+.template-product .productView-details .product-form__submit {
+  margin-top:-87px;
+}
+
+.header-search-close {
+    display: block;
+    background: none;
+    border: none;
+    text-align: right !important;
+    float: right;
+    margin-right: -115px;
+}
+.sticky-search-menu-open .header-nav-plain .search-modal__content, .Skin-Header .search-modal__content {
+    max-width: 1500px!important;
+    width: 75%;
+    padding: 0 20px;
+}
+
+/* a {
+  cursor: url('https://cdn.shopify.com/s/files/1/0754/0008/5825/files/cursor-pointer.png'),context-menu!important;
+} */
+
+.header-navigation .header-logo {
+  width:350px;
+}
+.header__heading.d-inline-block {
+  width:100%;
+}
+
+.halo-sidebar .product .card-title {
+  min-height:inherit !important;
+}
+
+
+
+@media (max-width: 767px) {
+  .template-product .productView-details .product-form__submit {
+  margin-top:0px;
+}
+}
+

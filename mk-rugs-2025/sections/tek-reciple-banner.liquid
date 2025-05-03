@@ -1,0 +1,245 @@
+<main>
+        <section class="recipe-header">
+            <img src="{{ article.image | img_url: 'master' }}" alt="Recipe Image" class="recipe-image">
+            <div class="recipe-info">
+                <h1>{{ article.title }}</h1>
+                <p class="author">By {{ article.author }}</p>
+                {% if article.excerpt != blank %}
+                    <p class="intro">{{ article.excerpt  }}</p>
+                {% else %}
+                   <p class="intro">{{ article.content | strip_html | truncate: 230, "." }}</p>
+                {% endif %}
+
+<div class="media_container">
+              
+                <div class="meta">
+                  {% if article.metafields.blog.serves %}
+                  <p class="serve">Serves: <span> {{ article.metafields.blog.serves.value }}</span></p>
+                  {% endif %}  
+                   {% if article.metafields.blog.time %}
+                     <p class="time">Time: <span>{{ article.metafields.blog.time.value }}</span></p>
+                  {% endif %} 
+                  {% if article.metafields.blog.rating %}
+                   <p class="rate">Rating: 
+                    <span>
+                      {% for i in (1..article.metafields.blog.rating.value) %}
+                        ★
+                      {% endfor %}
+                      {% for i in (article.metafields.blog.rating.value..4) %}
+                        ☆
+                      {% endfor %}
+                    </span>
+                    </p>
+                  {% endif %}  
+                 </div>
+
+
+
+
+<div class="social-grid">
+  <div class="social-grid-item">
+    <div class="social-share-btn share-btn_facebook" role="button" tabindex="0" aria-label="Share on facebook">
+    <span class="social-share-btn__icon"><a href="https://www.facebook.com/sweetjulyofficial">{% render 'icon-facebook' %}</a></span>
+    </div>
+  </div>
+  <div class="social-grid-item">
+    <div class="social-share-btn share-btn_x-twitter" role="button" tabindex="0" aria-label="Share on x-twitter">
+    <span class="social-share-btn__icon"><a href="https://twitter.com/sweetjulymag">{% render 'icon-twitter' %}</a></span>
+    </div>
+  </div>
+  <div class="social-grid-item">
+    <div class="social-share-btn share-btn_email" role="button" tabindex="0" aria-label="Share on email">
+    <span class="social-share-btn__icon"><a href="https://www.instagram.com/sweetjuly/">{% render 'icon-instagram' %}</a></span>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+              
+            </div>
+        </section>       
+</main>
+<div class="article-body d-none">
+    <div class="article-content halo-text-format container" >
+       
+    </div>
+</div> 
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: #f4f4f4;
+    padding: 10px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.recipe-header {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0px;
+}
+
+.recipe-image {
+    width: 50%;
+    max-height: 670px;
+}
+
+.recipe-info {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.recipe-info h1 {
+    margin-bottom: 10px;
+    font-family: 'Saol Display';
+      font-size: 64px;
+      font-weight: 500;
+      line-height: 64px;
+      text-align: left;
+}
+.recipe-info .author ,.recipe-info .intro{
+  font-family: 'GT America';
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26.19px;
+}
+.recipe-info .intro{ padding: 50px 0px}
+  
+.serve,.time,.rate{font-family: 'GT America';
+font-size: 20px;
+line-height: 30.19px;
+font-weight: 600;
+}
+.serve > span,.time > span,.rate > span{
+  font-family: 'GT America';
+  font-size: 20px;
+ line-height: 30.19px;
+  font-weight: 400;
+}
+.recipe-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ingredients, .instructions {
+    width: 45%;
+}
+
+.media_container{display: flex;}
+.social-grid{display: flex; margin:auto;}  
+.social-grid-item{
+  width: 40px;
+    height: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: radial-gradient(circle, #d1d1d1, #a9a9a9);
+    border-radius: 50%;
+    margin: 0 5px;
+}  
+.social-grid-item::hover{
+  background: #000000;
+}  
+.share-btn_facebook svg{
+    fill: white;
+    height: 18px;
+    width: 10px;
+}
+.share-btn_x-twitter svg{
+    fill: white;
+    height: 18px;
+    width: 18px;
+}
+ .share-btn_email svg{
+    fill: white;
+    height: 18px;
+    width: 18px;
+}
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+
+    .recipe-header {
+        flex-direction: column;
+        text-align: center;
+         padding: 0px 0px;
+    }
+
+    .recipe-image {
+        width: 100%;
+    }
+
+    .recipe-info {
+    margin-left: 0;
+    text-align: left;
+    padding: 51px 35px;
+    }
+    .recipe-info h1 {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 40px;
+    }
+    .recipe-info .author,.recipe-info .intro{
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20.13px;
+    }
+   .recipe-info .intro{ padding: 30px 0px}
+  .serve,.time,.rate{
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20.13px;
+  }
+  .serve > span,.time > span,.rate > span{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.13px;
+  }
+    .recipe-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .ingredients, .instructions {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+  .media_container{display:block;}
+  .social-grid{margin-top:20px;}
+
+}
+</style>  
+
+
+{% schema %}
+  {
+    "name": "Recipe Banner",
+    "settings": [],
+    "presets": [
+	{
+		"name": "Recipe Banner",
+	}
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,86 @@
+{% if section.settings.title != blank %}
+<section class="FounderSection borderedImageWithText" style="background-color: {{ section.settings.background_color }};">
+  <div class="container">
+    <div class="postImageWithText" style="flex-direction: {{ section.settings.flex_direction }};">
+      <div class="postTextBox">
+        <h4>{{ section.settings.title }}</h4>
+        <p>{{ section.settings.paragraph_One }}</p>
+        <p>{{ section.settings.paragraph_Two }}</p>
+      </div>
+      <div class="postImageBox">
+<img src="{{ section.settings.image_url | img_url: 'original' }}" alt="Image">
+        <figure class="wp-caption">
+          <figcaption>{{ section.settings.image_caption }}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Article Founder-Section",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color"
+      },
+      {
+        "type": "select",
+        "id": "flex_direction",
+        "label": "Flex Direction",
+        "options": [
+          {
+            "value": "row",
+            "label": "Row"
+          },
+          {
+            "value": "row-reverse",
+            "label": "Row Reverse"
+          },
+          {
+            "value": "column",
+            "label": "Column"
+          },
+          {
+            "value": "column-reverse",
+            "label": "Column Reverse"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "paragraph_One",
+        "label": "Paragraph One"
+      },
+      {
+        "type": "richtext",
+        "id": "paragraph_Two",
+        "label": "Paragraph Two"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_url",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "image_caption",
+        "label": "Image Caption"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Article Founder Section",
+        "category": "Article Founder Section"
+      }
+    ]
+  }
+{% endschema %}
